@@ -1,0 +1,12 @@
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '8.0'
+pod 'GoogleAnalytics-iOS-SDK', '~> 3.0.8'
+pod 'SDWebImage', '~>3.6'
+pod 'UIActivityIndicator-for-SDWebImage'
+pod 'FBSDKCoreKit'
+pod 'FBSDKLoginKit'
+pod 'FBSDKShareKit'
+pod 'QuickBlox'
+pod 'Quickblox-WebRTC'
+pod 'Parse'
+
