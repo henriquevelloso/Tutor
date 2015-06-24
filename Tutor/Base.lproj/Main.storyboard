@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="15A178w" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="AdmiralCAT.ttf">
+            <string>AdmiralCAT</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Tutor" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +21,90 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="89g-Y1-wdQ">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <animations/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="fKx-fb-yhx">
+                                <rect key="frame" x="227" y="186" width="146" height="128"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="fKx-fb-yhx" secondAttribute="height" multiplier="73:64" id="JpP-Ga-Mxf"/>
+                                    <constraint firstAttribute="width" constant="146" id="m8z-HN-wU7"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lose shame on speaking" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HU1-CI-qb0">
+                                <rect key="frame" x="216" y="356" width="167" height="17.5"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tutor" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YFS-l0-vD4">
+                                <rect key="frame" x="268" y="324" width="64" height="32"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="AdmiralCAT" family="Admiral CAT" pointSize="32"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="89g-Y1-wdQ" secondAttribute="trailing" id="2cO-9X-fN5"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="89g-Y1-wdQ" secondAttribute="bottom" id="7dE-Q1-Vx3"/>
+                            <constraint firstAttribute="centerX" secondItem="fKx-fb-yhx" secondAttribute="centerX" id="DZg-KS-0d6"/>
+                            <constraint firstItem="89g-Y1-wdQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="DeP-Ty-6pT"/>
+                            <constraint firstItem="HU1-CI-qb0" firstAttribute="top" secondItem="YFS-l0-vD4" secondAttribute="bottom" id="DtV-fU-AAN"/>
+                            <constraint firstAttribute="centerX" secondItem="YFS-l0-vD4" secondAttribute="centerX" id="U7c-C4-3nm"/>
+                            <constraint firstAttribute="centerY" secondItem="fKx-fb-yhx" secondAttribute="centerY" constant="50" id="dPR-Ja-4GA"/>
+                            <constraint firstItem="89g-Y1-wdQ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="daW-Y6-naE"/>
+                            <constraint firstAttribute="centerY" secondItem="YFS-l0-vD4" secondAttribute="centerY" constant="-40" id="nFx-Dv-ze0"/>
+                            <constraint firstItem="HU1-CI-qb0" firstAttribute="centerX" secondItem="YFS-l0-vD4" secondAttribute="centerX" id="rnr-TE-sUE"/>
+                            <constraint firstAttribute="centerY" secondItem="HU1-CI-qb0" secondAttribute="centerY" constant="-65" id="yTV-s9-tog"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="DtV-fU-AAN"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="constraintIconPos" destination="dPR-Ja-4GA" id="IMm-47-sG5"/>
+                        <outlet property="constraintSubtitlePos" destination="yTV-s9-tog" id="PQI-qe-XIK"/>
+                        <outlet property="constraintTitlePos" destination="nFx-Dv-ze0" id="33z-Rr-gdR"/>
+                        <outlet property="imgIcon" destination="fKx-fb-yhx" id="h1e-CH-D2K"/>
+                        <outlet property="lblSubtitle" destination="HU1-CI-qb0" id="AXY-EB-qbp"/>
+                        <outlet property="lblTitle" destination="YFS-l0-vD4" id="3bS-iU-Sek"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="566" y="427"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="kbO-Tj-3BY">
+            <objects>
+                <viewController id="QVV-yG-Gez" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fG9-LH-6gs"/>
+                        <viewControllerLayoutGuide type="bottom" id="HTN-GR-r0Y"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5db-Da-qwR">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5lE-4p-Khx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1337" y="427"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="background" width="1881" height="1444"/>
+        <image name="icon" width="160" height="169"/>
+    </resources>
 </document>
