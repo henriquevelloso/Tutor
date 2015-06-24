@@ -7,6 +7,7 @@
     <customFonts key="customFonts">
         <mutableArray key="AdmiralCAT.ttf">
             <string>AdmiralCAT</string>
+            <string>AdmiralCAT</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -26,7 +27,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <animations/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="fKx-fb-yhx">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-app" translatesAutoresizingMaskIntoConstraints="NO" id="fKx-fb-yhx">
                                 <rect key="frame" x="227" y="186" width="146" height="128"/>
                                 <animations/>
                                 <constraints>
@@ -83,10 +84,10 @@
             </objects>
             <point key="canvasLocation" x="566" y="427"/>
         </scene>
-        <!--View Controller-->
+        <!--Welcome View Controller-->
         <scene sceneID="kbO-Tj-3BY">
             <objects>
-                <viewController id="QVV-yG-Gez" sceneMemberID="viewController">
+                <viewController id="QVV-yG-Gez" customClass="TTWelcomeViewController" customModule="Tutor" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fG9-LH-6gs"/>
                         <viewControllerLayoutGuide type="bottom" id="HTN-GR-r0Y"/>
@@ -94,9 +95,69 @@
                     <view key="view" contentMode="scaleToFill" id="5db-Da-qwR">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="beV-Tn-wAi">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <animations/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-user" translatesAutoresizingMaskIntoConstraints="NO" id="K8M-cR-kPh">
+                                <rect key="frame" x="215" y="95" width="170" height="170"/>
+                                <animations/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="170" id="VwI-Rg-3Td"/>
+                                    <constraint firstAttribute="width" secondItem="K8M-cR-kPh" secondAttribute="height" multiplier="1:1" id="YVl-aj-Yyq"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bem-vindo ao" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FPv-YW-LuM">
+                                <rect key="frame" x="216" y="279" width="99" height="18.5"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tutor" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Cz-78-mHq">
+                                <rect key="frame" x="319" y="272" width="64" height="32"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="AdmiralCAT" family="Admiral CAT" pointSize="32"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0nL-3o-6ek">
+                                <rect key="frame" x="210.5" y="502" width="180" height="38"/>
+                                <animations/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.29848500844594594" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="JzI-0D-hqG"/>
+                                    <constraint firstAttribute="height" constant="38" id="MPN-32-rLa"/>
+                                </constraints>
+                                <state key="normal" title="Próximo">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="FPv-YW-LuM" firstAttribute="top" secondItem="K8M-cR-kPh" secondAttribute="bottom" constant="14" id="5pD-ft-C1Q"/>
+                            <constraint firstItem="K8M-cR-kPh" firstAttribute="centerX" secondItem="FPv-YW-LuM" secondAttribute="centerX" constant="34" id="AOb-WH-yPJ"/>
+                            <constraint firstItem="beV-Tn-wAi" firstAttribute="leading" secondItem="5db-Da-qwR" secondAttribute="leading" id="I8K-St-0pF"/>
+                            <constraint firstItem="K8M-cR-kPh" firstAttribute="top" secondItem="fG9-LH-6gs" secondAttribute="bottom" constant="75" id="X2I-oI-3tr"/>
+                            <constraint firstItem="beV-Tn-wAi" firstAttribute="top" secondItem="5db-Da-qwR" secondAttribute="top" id="h6k-hE-Jxs"/>
+                            <constraint firstItem="HTN-GR-r0Y" firstAttribute="top" secondItem="0nL-3o-6ek" secondAttribute="bottom" constant="60" id="hic-V0-lsD"/>
+                            <constraint firstAttribute="centerX" secondItem="K8M-cR-kPh" secondAttribute="centerX" id="jES-EJ-wvZ"/>
+                            <constraint firstItem="HTN-GR-r0Y" firstAttribute="top" secondItem="beV-Tn-wAi" secondAttribute="bottom" id="onb-6W-ElD"/>
+                            <constraint firstItem="8Cz-78-mHq" firstAttribute="leading" secondItem="FPv-YW-LuM" secondAttribute="trailing" constant="4" id="qNY-M5-VXt"/>
+                            <constraint firstItem="8Cz-78-mHq" firstAttribute="centerY" secondItem="FPv-YW-LuM" secondAttribute="centerY" id="r6B-DV-CrO"/>
+                            <constraint firstAttribute="trailing" secondItem="beV-Tn-wAi" secondAttribute="trailing" id="rvR-SA-WVv"/>
+                            <constraint firstAttribute="centerX" secondItem="0nL-3o-6ek" secondAttribute="centerX" id="wDu-cL-RQO"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="btNext" destination="0nL-3o-6ek" id="p35-8n-sk2"/>
+                        <outlet property="imgUserProfile" destination="K8M-cR-kPh" id="RoO-DD-Ggs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5lE-4p-Khx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -105,6 +166,7 @@
     </scenes>
     <resources>
         <image name="background" width="1881" height="1444"/>
-        <image name="icon" width="160" height="169"/>
+        <image name="icon-app" width="160" height="169"/>
+        <image name="icon-user" width="1025" height="1025"/>
     </resources>
 </document>
