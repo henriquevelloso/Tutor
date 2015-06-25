@@ -9,4 +9,5 @@ pod 'FBSDKShareKit'
 pod 'QuickBlox'
 pod 'Quickblox-WebRTC'
 pod 'Parse'
+pod 'ParseFacebookUtilsV4'
 
