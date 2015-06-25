@@ -71,5 +71,9 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     
+    // Actions
+    @IBAction func btConfigTouchUpInsideAction(sender: AnyObject) {
+        PFUser.logOut()
+    }
     
 }

@@ -40,7 +40,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lose shame on speaking" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HU1-CI-qb0">
-                                <rect key="frame" x="216" y="356" width="167" height="18"/>
+                                <rect key="frame" x="216" y="356" width="167" height="17.5"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -76,12 +76,13 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="89g-Y1-wdQ" secondAttribute="trailing" id="2cO-9X-fN5"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="89g-Y1-wdQ" secondAttribute="bottom" id="7dE-Q1-Vx3"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="7VM-vP-OUT" secondAttribute="bottom" priority="999" constant="100" id="7zY-NQ-btJ"/>
                             <constraint firstAttribute="centerX" secondItem="fKx-fb-yhx" secondAttribute="centerX" id="DZg-KS-0d6"/>
                             <constraint firstItem="89g-Y1-wdQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="DeP-Ty-6pT"/>
                             <constraint firstItem="HU1-CI-qb0" firstAttribute="top" secondItem="YFS-l0-vD4" secondAttribute="bottom" id="DtV-fU-AAN"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="7VM-vP-OUT" secondAttribute="bottom" constant="100" id="Kph-H8-gEI"/>
                             <constraint firstAttribute="trailing" secondItem="7VM-vP-OUT" secondAttribute="trailing" constant="70" id="QWy-QE-MWX"/>
                             <constraint firstAttribute="centerX" secondItem="YFS-l0-vD4" secondAttribute="centerX" id="U7c-C4-3nm"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="7VM-vP-OUT" secondAttribute="bottom" constant="30" id="UBX-Sa-4mN"/>
                             <constraint firstAttribute="centerY" secondItem="fKx-fb-yhx" secondAttribute="centerY" constant="50" id="dPR-Ja-4GA"/>
                             <constraint firstItem="89g-Y1-wdQ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="daW-Y6-naE"/>
                             <constraint firstItem="7VM-vP-OUT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="70" id="hAz-cH-2Zi"/>
@@ -92,13 +93,19 @@
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="DtV-fU-AAN"/>
+                                <exclude reference="UBX-Sa-4mN"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact">
+                            <mask key="constraints">
+                                <include reference="UBX-Sa-4mN"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
                         <outlet property="btLogin" destination="7VM-vP-OUT" id="VRC-Sw-ahn"/>
                         <outlet property="constraintIconPos" destination="dPR-Ja-4GA" id="IMm-47-sG5"/>
-                        <outlet property="constraintLoginButton" destination="Kph-H8-gEI" id="dcE-Ov-igQ"/>
+                        <outlet property="constraintLoginButton" destination="7zY-NQ-btJ" id="VqL-so-oSG"/>
                         <outlet property="constraintSubtitlePos" destination="yTV-s9-tog" id="PQI-qe-XIK"/>
                         <outlet property="constraintTitlePos" destination="nFx-Dv-ze0" id="33z-Rr-gdR"/>
                         <outlet property="imgIcon" destination="fKx-fb-yhx" id="h1e-CH-D2K"/>
@@ -173,16 +180,41 @@
                             <constraint firstItem="FPv-YW-LuM" firstAttribute="top" secondItem="K8M-cR-kPh" secondAttribute="bottom" constant="14" id="5pD-ft-C1Q"/>
                             <constraint firstItem="K8M-cR-kPh" firstAttribute="centerX" secondItem="FPv-YW-LuM" secondAttribute="centerX" constant="34" id="AOb-WH-yPJ"/>
                             <constraint firstItem="beV-Tn-wAi" firstAttribute="leading" secondItem="5db-Da-qwR" secondAttribute="leading" id="I8K-St-0pF"/>
-                            <constraint firstItem="K8M-cR-kPh" firstAttribute="top" secondItem="fG9-LH-6gs" secondAttribute="bottom" constant="75" id="X2I-oI-3tr"/>
+                            <constraint firstItem="HTN-GR-r0Y" firstAttribute="top" secondItem="0nL-3o-6ek" secondAttribute="bottom" constant="20" id="JGQ-mi-QNr"/>
+                            <constraint firstItem="K8M-cR-kPh" firstAttribute="top" secondItem="fG9-LH-6gs" secondAttribute="bottom" priority="999" constant="75" id="X2I-oI-3tr"/>
                             <constraint firstItem="beV-Tn-wAi" firstAttribute="top" secondItem="5db-Da-qwR" secondAttribute="top" id="h6k-hE-Jxs"/>
-                            <constraint firstItem="HTN-GR-r0Y" firstAttribute="top" secondItem="0nL-3o-6ek" secondAttribute="bottom" constant="60" id="hic-V0-lsD"/>
+                            <constraint firstItem="HTN-GR-r0Y" firstAttribute="top" secondItem="0nL-3o-6ek" secondAttribute="bottom" priority="999" constant="60" id="hic-V0-lsD"/>
+                            <constraint firstAttribute="centerY" secondItem="K8M-cR-kPh" secondAttribute="centerY" constant="80" id="hpF-GK-Sb6"/>
                             <constraint firstAttribute="centerX" secondItem="K8M-cR-kPh" secondAttribute="centerX" id="jES-EJ-wvZ"/>
                             <constraint firstItem="HTN-GR-r0Y" firstAttribute="top" secondItem="beV-Tn-wAi" secondAttribute="bottom" id="onb-6W-ElD"/>
                             <constraint firstItem="8Cz-78-mHq" firstAttribute="leading" secondItem="FPv-YW-LuM" secondAttribute="trailing" constant="4" id="qNY-M5-VXt"/>
                             <constraint firstItem="8Cz-78-mHq" firstAttribute="centerY" secondItem="FPv-YW-LuM" secondAttribute="centerY" id="r6B-DV-CrO"/>
                             <constraint firstAttribute="trailing" secondItem="beV-Tn-wAi" secondAttribute="trailing" id="rvR-SA-WVv"/>
+                            <constraint firstItem="HTN-GR-r0Y" firstAttribute="top" secondItem="0nL-3o-6ek" secondAttribute="bottom" constant="20" id="srB-9P-Y7C"/>
                             <constraint firstAttribute="centerX" secondItem="0nL-3o-6ek" secondAttribute="centerX" id="wDu-cL-RQO"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="hpF-GK-Sb6"/>
+                                <exclude reference="JGQ-mi-QNr"/>
+                                <exclude reference="srB-9P-Y7C"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact">
+                            <mask key="constraints">
+                                <include reference="srB-9P-Y7C"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=regular">
+                            <mask key="constraints">
+                                <include reference="JGQ-mi-QNr"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="constraints">
+                                <include reference="hpF-GK-Sb6"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="btNext" destination="0nL-3o-6ek" id="p35-8n-sk2"/>

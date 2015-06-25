@@ -50,6 +50,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                 <state key="normal" image="icon-config"/>
+                                <connections>
+                                    <action selector="btConfigTouchUpInsideAction:" destination="aOK-1j-R56" eventType="touchUpInside" id="gTm-hz-6eT"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Log-cc-kiB">
                                 <rect key="frame" x="32" y="112" width="536" height="38"/>
@@ -103,9 +106,10 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PRW-WO-Cnd" id="zst-SZ-ZBg">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qie-Iw-Kil">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-user" translatesAutoresizingMaskIntoConstraints="NO" id="qie-Iw-Kil">
                                                     <rect key="frame" x="10" y="7" width="60" height="60"/>
                                                     <animations/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="qie-Iw-Kil" secondAttribute="height" multiplier="1:1" id="5cU-s5-x9R"/>
                                                         <constraint firstAttribute="width" constant="60" id="9cy-Yw-dzU"/>
