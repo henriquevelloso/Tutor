@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="15A178w" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8121.17" systemVersion="15A178w" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.14"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="AdmiralCAT.ttf">
             <string>AdmiralCAT</string>
             <string>AdmiralCAT</string>
+        </mutableArray>
+        <mutableArray key="Helvetica.ttc">
+            <string>Helvetica</string>
+            <string>Helvetica</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -36,7 +41,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lose shame on speaking" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HU1-CI-qb0">
-                                <rect key="frame" x="216" y="356" width="167" height="17.5"/>
+                                <rect key="frame" x="216" y="356" width="167" height="18"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -49,6 +54,20 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7VM-vP-OUT">
+                                <rect key="frame" x="70" y="458" width="460" height="42"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.1091218192" green="0.44110093140000001" blue="0.81613005049999998" alpha="0.98857157939999996" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="5cZ-1O-mdI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="29" maxY="0.0"/>
+                                <state key="normal" title="Logar com Facebook" image="icon-facebook">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -58,9 +77,12 @@
                             <constraint firstAttribute="centerX" secondItem="fKx-fb-yhx" secondAttribute="centerX" id="DZg-KS-0d6"/>
                             <constraint firstItem="89g-Y1-wdQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="DeP-Ty-6pT"/>
                             <constraint firstItem="HU1-CI-qb0" firstAttribute="top" secondItem="YFS-l0-vD4" secondAttribute="bottom" id="DtV-fU-AAN"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="7VM-vP-OUT" secondAttribute="bottom" constant="100" id="Kph-H8-gEI"/>
+                            <constraint firstAttribute="trailing" secondItem="7VM-vP-OUT" secondAttribute="trailing" constant="70" id="QWy-QE-MWX"/>
                             <constraint firstAttribute="centerX" secondItem="YFS-l0-vD4" secondAttribute="centerX" id="U7c-C4-3nm"/>
                             <constraint firstAttribute="centerY" secondItem="fKx-fb-yhx" secondAttribute="centerY" constant="50" id="dPR-Ja-4GA"/>
                             <constraint firstItem="89g-Y1-wdQ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="daW-Y6-naE"/>
+                            <constraint firstItem="7VM-vP-OUT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="70" id="hAz-cH-2Zi"/>
                             <constraint firstAttribute="centerY" secondItem="YFS-l0-vD4" secondAttribute="centerY" constant="-40" id="nFx-Dv-ze0"/>
                             <constraint firstItem="HU1-CI-qb0" firstAttribute="centerX" secondItem="YFS-l0-vD4" secondAttribute="centerX" id="rnr-TE-sUE"/>
                             <constraint firstAttribute="centerY" secondItem="HU1-CI-qb0" secondAttribute="centerY" constant="-65" id="yTV-s9-tog"/>
@@ -72,12 +94,15 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="btLogin" destination="7VM-vP-OUT" id="VRC-Sw-ahn"/>
                         <outlet property="constraintIconPos" destination="dPR-Ja-4GA" id="IMm-47-sG5"/>
+                        <outlet property="constraintLoginButton" destination="Kph-H8-gEI" id="dcE-Ov-igQ"/>
                         <outlet property="constraintSubtitlePos" destination="yTV-s9-tog" id="PQI-qe-XIK"/>
                         <outlet property="constraintTitlePos" destination="nFx-Dv-ze0" id="33z-Rr-gdR"/>
                         <outlet property="imgIcon" destination="fKx-fb-yhx" id="h1e-CH-D2K"/>
                         <outlet property="lblSubtitle" destination="HU1-CI-qb0" id="AXY-EB-qbp"/>
                         <outlet property="lblTitle" destination="YFS-l0-vD4" id="3bS-iU-Sek"/>
+                        <segue destination="QVV-yG-Gez" kind="presentation" identifier="segueLoginToWelcome" modalTransitionStyle="crossDissolve" id="GGt-Nq-iFq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -110,7 +135,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bem-vindo ao" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FPv-YW-LuM">
-                                <rect key="frame" x="216" y="279" width="99" height="18.5"/>
+                                <rect key="frame" x="216" y="279" width="99" height="19"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -123,8 +148,8 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0nL-3o-6ek">
-                                <rect key="frame" x="210.5" y="502" width="180" height="38"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0nL-3o-6ek">
+                                <rect key="frame" x="211" y="502" width="180" height="38"/>
                                 <animations/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.29848500844594594" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -167,6 +192,7 @@
     <resources>
         <image name="background" width="1881" height="1444"/>
         <image name="icon-app" width="160" height="169"/>
+        <image name="icon-facebook" width="29" height="29"/>
         <image name="icon-user" width="1025" height="1025"/>
     </resources>
 </document>
