@@ -42,7 +42,7 @@ class TTWelcomeViewController: UIViewController {
     }
     
     @IBAction func btNextTouchUpInsideAction(sender: AnyObject) {
-        PFUser.logOut()
+        self.presentViewController(UIStoryboard(name: "Initial", bundle: nil).instantiateInitialViewController() as! UIViewController, animated: true, completion: nil)
     }
 
     /*

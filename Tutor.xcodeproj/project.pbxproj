@@ -11,6 +11,8 @@
 		C3587A131B3C5CE000AD0D0F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3587A121B3C5CE000AD0D0F /* User.swift */; };
 		C38EB4391B3B13E7006242C4 /* AdmiralCAT.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C38EB4381B3B1394006242C4 /* AdmiralCAT.ttf */; };
 		C38EB43E1B3B226D006242C4 /* TTWelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38EB43D1B3B226D006242C4 /* TTWelcomeViewController.swift */; };
+		C3D67AFF1B3C6CF30036EBF8 /* Initial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3D67AFE1B3C6CF30036EBF8 /* Initial.storyboard */; };
+		C3D67B011B3C6F120036EBF8 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D67B001B3C6F120036EBF8 /* DashboardViewController.swift */; };
 		C5D37FD91B39A67D00487807 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D37FD81B39A67D00487807 /* AppDelegate.swift */; };
 		C5D37FDB1B39A67D00487807 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D37FDA1B39A67D00487807 /* ViewController.swift */; };
 		C5D37FDE1B39A67D00487807 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5D37FDC1B39A67D00487807 /* Main.storyboard */; };
@@ -36,6 +38,8 @@
 		C3587A121B3C5CE000AD0D0F /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C38EB4381B3B1394006242C4 /* AdmiralCAT.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AdmiralCAT.ttf; sourceTree = "<group>"; };
 		C38EB43D1B3B226D006242C4 /* TTWelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTWelcomeViewController.swift; sourceTree = "<group>"; };
+		C3D67AFE1B3C6CF30036EBF8 /* Initial.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Initial.storyboard; sourceTree = "<group>"; };
+		C3D67B001B3C6F120036EBF8 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		C538BDFD1B3AE30B00028F0C /* Bridge-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridge-Header.h"; sourceTree = "<group>"; };
 		C5D37FD31B39A67D00487807 /* Tutor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tutor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5D37FD71B39A67D00487807 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -90,6 +94,7 @@
 			children = (
 				C5D37FE11B39A67D00487807 /* LaunchScreen.xib */,
 				C5D37FDC1B39A67D00487807 /* Main.storyboard */,
+				C3D67AFE1B3C6CF30036EBF8 /* Initial.storyboard */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -97,6 +102,7 @@
 		C38EB43C1B3B221B006242C4 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				C3D67B001B3C6F120036EBF8 /* DashboardViewController.swift */,
 				C38EB43D1B3B226D006242C4 /* TTWelcomeViewController.swift */,
 				C5D37FDA1B39A67D00487807 /* ViewController.swift */,
 			);
@@ -257,6 +263,7 @@
 				C5D37FDE1B39A67D00487807 /* Main.storyboard in Resources */,
 				C5D37FE31B39A67D00487807 /* LaunchScreen.xib in Resources */,
 				C5D37FE01B39A67D00487807 /* Images.xcassets in Resources */,
+				C3D67AFF1B3C6CF30036EBF8 /* Initial.storyboard in Resources */,
 				C38EB4391B3B13E7006242C4 /* AdmiralCAT.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -310,6 +317,7 @@
 			files = (
 				C3587A131B3C5CE000AD0D0F /* User.swift in Sources */,
 				C5D37FDB1B39A67D00487807 /* ViewController.swift in Sources */,
+				C3D67B011B3C6F120036EBF8 /* DashboardViewController.swift in Sources */,
 				C38EB43E1B3B226D006242C4 /* TTWelcomeViewController.swift in Sources */,
 				C5D37FD91B39A67D00487807 /* AppDelegate.swift in Sources */,
 			);
