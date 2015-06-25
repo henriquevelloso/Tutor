@@ -41,6 +41,9 @@ class TTWelcomeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func btNextTouchUpInsideAction(sender: AnyObject) {
+        PFUser.logOut()
+    }
 
     /*
     // MARK: - Navigation

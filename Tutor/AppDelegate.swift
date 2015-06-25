@@ -30,6 +30,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //Facebook
         PFFacebookUtils.initializeFacebookWithApplicationLaunchOptions(launchOptions)
+        
+        if let currentUser = PFUser.currentUser()
+        {
+            User.user.loadData(currentUser)
+            self.window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("vcWelcome") as? UIViewController
+            self.window?.makeKeyAndVisible()
+        }
+        
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }
     
