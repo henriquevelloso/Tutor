@@ -100,11 +100,29 @@ class ViewController: UIViewController {
     }
     
     @IBAction func btLoginTouchUpInsideAction(sender: UIButton) {
-        /*PFFacebookUtils.logInInBackgroundWithReadPermissions(["public_profile", "user_friends", "email"]) {
+        
+        self.btLogin.setTitle("", forState: UIControlState.Disabled)
+        self.btLogin.setImage(UIImage(), forState: UIControlState.Disabled)
+        self.btLogin.enabled = false
+        
+        let aView : UIActivityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.White)
+        aView.hidesWhenStopped = true
+        aView.center = self.btLogin.center
+        self.view.addSubview(aView)
+        aView.startAnimating()
+        
+        let undoActivityIndicatorView : (() -> ()) = {
+            aView.stopAnimating()
+            aView.removeFromSuperview()
+            self.btLogin.enabled = true
+        }
+        
+        PFFacebookUtils.logInInBackgroundWithReadPermissions(["public_profile", "user_friends", "email"]) {
             (user: PFUser?, error: NSError?) -> Void in
             if let user = user {
                 if user.isNew {
-                    println("User signed up and logged in through Facebook!")
+                    // NEW USER
+                    User.user.parseUser = user
                     
                     var request : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: nil)
                     request.startWithCompletionHandler({ (connection, result, error) -> Void in
@@ -122,34 +140,37 @@ class ViewController: UIViewController {
                             let imgProfileData = NSData(contentsOfURL: imgProfileURL!)
                             
                             
+                            // User
+                            User.user.fbID = fbid
+                            User.user.email = email
+                            User.user.name = name
+                            User.user.gender = gender
+                            User.user.photo = imgProfileData
                             
-                            // Parse
-                            user.email = email
-                            user.setObject(fbid, forKey: "facebookId")
-                            user.setObject(name, forKey: "name")
-                            user.setObject(gender, forKey: "gender")
-                            
-                            if let imgProfileData = imgProfileData
-                            {
-                                var file : PFFile = PFFile(name: "default", data: imgProfileData)
-                                user.setObject(file, forKey: "image")
-                            }
-                            user.saveInBackgroundWithBlock({ (successed, error) -> Void in
-                                self.performSegueWithIdentifier("segueLoginToWelcome", sender: nil)
+                            User.user.saveWithBlock({ (successed, error) -> () in
+                                undoActivityIndicatorView()
+                                
+                                if let error = error
+                                {
+                                    self.performSegueWithIdentifier("segueLoginToWelcome", sender: nil)
+                                }
                             })
                         }
                     })
                     
                     
                 } else {
+                    // USER LOGIN
+                    User.user.loadData(user)
                     
-                    println("User logged in through Facebook!")
                     self.performSegueWithIdentifier("segueLoginToWelcome", sender: nil)
+                    undoActivityIndicatorView();
                 }
             } else {
                 println("Uh oh. The user cancelled the Facebook login.")
+                undoActivityIndicatorView()
             }
-        }*/
+        }
     }
     
     

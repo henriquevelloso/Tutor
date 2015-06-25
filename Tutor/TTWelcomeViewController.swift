@@ -25,6 +25,16 @@ class TTWelcomeViewController: UIViewController {
         self.btNext.layer.masksToBounds = true
         self.btNext.layer.cornerRadius = self.btNext.frame.size.height / 2
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        User.user.getPhoto { (imgData, error) -> () in
+            if let imgData = imgData{
+                self.imgUserProfile.image = UIImage(data: imgData)
+            }
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

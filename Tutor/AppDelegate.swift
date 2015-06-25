@@ -28,7 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // [Optional] Track statistics around application opens.
         //PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
         
-        //Facebook 4
+        //Facebook
+        PFFacebookUtils.initializeFacebookWithApplicationLaunchOptions(launchOptions)
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }
     

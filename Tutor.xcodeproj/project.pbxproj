@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3CDC0101F8CB29AA9ED1BCD5 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5557560F9801DEAAE8E1D9DB /* libPods.a */; };
+		C3587A131B3C5CE000AD0D0F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3587A121B3C5CE000AD0D0F /* User.swift */; };
 		C38EB4391B3B13E7006242C4 /* AdmiralCAT.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C38EB4381B3B1394006242C4 /* AdmiralCAT.ttf */; };
 		C38EB43E1B3B226D006242C4 /* TTWelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38EB43D1B3B226D006242C4 /* TTWelcomeViewController.swift */; };
 		C5D37FD91B39A67D00487807 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D37FD81B39A67D00487807 /* AppDelegate.swift */; };
@@ -32,6 +33,7 @@
 		1A50665D2D9603E21E779305 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		5557560F9801DEAAE8E1D9DB /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		87766B01811F6F24C3FFAEA1 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		C3587A121B3C5CE000AD0D0F /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C38EB4381B3B1394006242C4 /* AdmiralCAT.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AdmiralCAT.ttf; sourceTree = "<group>"; };
 		C38EB43D1B3B226D006242C4 /* TTWelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTWelcomeViewController.swift; sourceTree = "<group>"; };
 		C538BDFD1B3AE30B00028F0C /* Bridge-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridge-Header.h"; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 		C38EB43A1B3B2210006242C4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C3587A121B3C5CE000AD0D0F /* User.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3587A131B3C5CE000AD0D0F /* User.swift in Sources */,
 				C5D37FDB1B39A67D00487807 /* ViewController.swift in Sources */,
 				C38EB43E1B3B226D006242C4 /* TTWelcomeViewController.swift in Sources */,
 				C5D37FD91B39A67D00487807 /* AppDelegate.swift in Sources */,
