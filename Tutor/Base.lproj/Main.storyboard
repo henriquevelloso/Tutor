@@ -171,7 +171,7 @@
                                 </state>
                                 <connections>
                                     <action selector="btNextTouchUpInsideAction:" destination="QVV-yG-Gez" eventType="touchUpInside" id="dGc-YX-r7s"/>
-                                    <segue destination="D14-8L-yBr" kind="show" id="OcG-xa-nFV"/>
+                                    <segue destination="D14-8L-yBr" kind="presentation" modalTransitionStyle="crossDissolve" id="OcG-xa-nFV"/>
                                 </connections>
                             </button>
                         </subviews>
