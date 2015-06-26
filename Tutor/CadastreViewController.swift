@@ -14,6 +14,7 @@ class CadastreViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var tableViewLanguage: UITableView!
     var languageNative:PFObject?
     var languageNativeRow:NSInteger = -1
+    
 
     @IBOutlet weak var btnNext: UIButton!
     
@@ -40,6 +41,8 @@ class CadastreViewController: UIViewController, UITableViewDelegate, UITableView
                 self.tableViewLanguage.reloadData()
             }
         }
+        
+        
         
     }
     
