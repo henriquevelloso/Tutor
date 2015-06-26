@@ -34,7 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let currentUser = PFUser.currentUser()
         {
             User.user.loadData(currentUser)
-            self.window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("vcWelcome") as? UIViewController
+            self.window?.rootViewController = UIStoryboard(name: "Initial", bundle: nil).instantiateInitialViewController() as? UIViewController
             self.window?.makeKeyAndVisible()
         }
         

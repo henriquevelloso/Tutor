@@ -113,12 +113,20 @@
 			isa = PBXGroup;
 			children = (
 				C3D67B001B3C6F120036EBF8 /* DashboardViewController.swift */,
-				C38EB43D1B3B226D006242C4 /* RegisterWelcomeViewController.swift */,
 				C5D37FDA1B39A67D00487807 /* LoginViewController.swift */,
+				C3BF1F851B3DB94600379F88 /* Register */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		C3BF1F851B3DB94600379F88 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				C38EB43D1B3B226D006242C4 /* RegisterWelcomeViewController.swift */,
 				A680BA6A1B3C8C3100FF2EE6 /* RegisterNativeLanguageViewController.swift */,
 				EBF0B6381B3D78C600C068B6 /* RegisterPracticeLanguageViewController.swift */,
 			);
-			name = Controller;
+			name = Register;
 			sourceTree = "<group>";
 		};
 		C5D37FCA1B39A67D00487807 = {

@@ -156,7 +156,8 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     
     // Actions
     @IBAction func btConfigTouchUpInsideAction(sender: AnyObject) {
-        //PFUser.logOut()
+        PFUser.logOut()
+        self.presentViewController(UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as! UIViewController, animated: true, completion: nil)
     }
     
     

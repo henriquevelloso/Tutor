@@ -163,9 +163,9 @@ class LoginViewController: UIViewController {
                     //
                     // USER LOGIN
                     User.user.loadData(user)
-                    
-                    self.performSegueWithIdentifier("segueLoginToWelcome", sender: nil)
                     undoActivityIndicatorView();
+                    self.performSegueWithIdentifier("segueLoginToWelcome", sender: nil)
+                    //self.presentViewController(UIStoryboard(name: "Initial", bundle: nil).instantiateInitialViewController() as! UIViewController, animated: true, completion: nil)
                 }
             } else {
                 println("Uh oh. The user cancelled the Facebook login.")

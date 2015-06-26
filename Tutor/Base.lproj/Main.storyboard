@@ -343,19 +343,26 @@
                             <constraint firstAttribute="centerX" secondItem="opB-Kj-arq" secondAttribute="centerX" id="5dE-d6-WvH"/>
                             <constraint firstItem="opB-Kj-arq" firstAttribute="top" secondItem="b1K-cj-ug9" secondAttribute="bottom" constant="20" id="AlF-We-ZpY"/>
                             <constraint firstItem="Awk-pT-SxM" firstAttribute="top" secondItem="sb0-Dw-rXC" secondAttribute="bottom" constant="24" id="EXh-hF-kun"/>
+                            <constraint firstItem="35Z-Ha-ZOp" firstAttribute="top" secondItem="opB-Kj-arq" secondAttribute="bottom" constant="22" id="Hne-9L-nyV"/>
                             <constraint firstItem="35Z-Ha-ZOp" firstAttribute="top" secondItem="4iz-gd-Hnp" secondAttribute="bottom" id="MVU-y5-TGY"/>
                             <constraint firstAttribute="centerX" secondItem="Awk-pT-SxM" secondAttribute="centerX" id="OMx-mg-ZJg"/>
                             <constraint firstAttribute="trailing" secondItem="b1K-cj-ug9" secondAttribute="trailing" constant="36" id="QUv-Zk-iHE"/>
                             <constraint firstItem="b1K-cj-ug9" firstAttribute="top" secondItem="Awk-pT-SxM" secondAttribute="bottom" constant="16" id="QYV-G6-mDM"/>
                             <constraint firstItem="b1K-cj-ug9" firstAttribute="leading" secondItem="iCC-gX-uME" secondAttribute="leading" constant="36" id="aMv-zI-kR4"/>
                             <constraint firstItem="4iz-gd-Hnp" firstAttribute="leading" secondItem="iCC-gX-uME" secondAttribute="leading" id="c6D-1e-mtE"/>
-                            <constraint firstItem="35Z-Ha-ZOp" firstAttribute="top" secondItem="opB-Kj-arq" secondAttribute="bottom" constant="36" id="k81-V7-AEK"/>
+                            <constraint firstItem="35Z-Ha-ZOp" firstAttribute="top" secondItem="opB-Kj-arq" secondAttribute="bottom" priority="999" constant="36" id="k81-V7-AEK"/>
                             <constraint firstItem="35Z-Ha-ZOp" firstAttribute="top" secondItem="opB-Kj-arq" secondAttribute="bottom" constant="36" id="wXI-JD-QtT"/>
                             <constraint firstAttribute="trailing" secondItem="4iz-gd-Hnp" secondAttribute="trailing" id="x4T-hB-p5O"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="Hne-9L-nyV"/>
                                 <exclude reference="wXI-JD-QtT"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact">
+                            <mask key="constraints">
+                                <include reference="Hne-9L-nyV"/>
                             </mask>
                         </variation>
                     </view>
@@ -448,6 +455,9 @@
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <nil key="highlightedColor"/>
+                                                            <variation key="heightClass=compact" misplaced="YES">
+                                                                <rect key="frame" x="19" y="20" width="21" height="21"/>
+                                                            </variation>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mgD-RX-Xt9">
                                                             <rect key="frame" x="66" y="18" width="45" height="22"/>
@@ -507,7 +517,8 @@
                             <constraint firstItem="wba-Zy-hI0" firstAttribute="leading" secondItem="HCq-Ed-lHL" secondAttribute="leading" constant="36" id="Dbs-RR-uHW"/>
                             <constraint firstItem="ZQe-az-eEH" firstAttribute="top" secondItem="HCq-Ed-lHL" secondAttribute="top" id="FbT-4N-8yi"/>
                             <constraint firstAttribute="trailing" secondItem="wba-Zy-hI0" secondAttribute="trailing" constant="36" id="G8S-sx-kfK"/>
-                            <constraint firstItem="Zsx-ad-jXL" firstAttribute="top" secondItem="Ze8-WW-Ect" secondAttribute="bottom" constant="36" id="PVp-j8-rF1"/>
+                            <constraint firstItem="Zsx-ad-jXL" firstAttribute="top" secondItem="Ze8-WW-Ect" secondAttribute="bottom" priority="999" constant="36" id="PVp-j8-rF1"/>
+                            <constraint firstItem="Zsx-ad-jXL" firstAttribute="top" secondItem="Ze8-WW-Ect" secondAttribute="bottom" constant="22" id="TzM-UO-wcs"/>
                             <constraint firstItem="wba-Zy-hI0" firstAttribute="top" secondItem="8r9-bs-qMC" secondAttribute="bottom" constant="20" id="U43-0e-6o6"/>
                             <constraint firstAttribute="centerX" secondItem="Ze8-WW-Ect" secondAttribute="centerX" id="YkM-zI-NUn"/>
                             <constraint firstItem="8r9-bs-qMC" firstAttribute="top" secondItem="vJC-7q-G2w" secondAttribute="bottom" constant="24" id="eyS-8l-W59"/>
@@ -515,6 +526,16 @@
                             <constraint firstAttribute="trailing" secondItem="ZQe-az-eEH" secondAttribute="trailing" id="qFs-yv-8fz"/>
                             <constraint firstAttribute="centerX" secondItem="8r9-bs-qMC" secondAttribute="centerX" id="zpV-QH-BbP"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="TzM-UO-wcs"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact">
+                            <mask key="constraints">
+                                <include reference="TzM-UO-wcs"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="btnSave" destination="Ze8-WW-Ect" id="koX-Hg-okW"/>

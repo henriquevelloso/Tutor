@@ -74,7 +74,6 @@ class RegisterNativeLanguageViewController: UIViewController, UITableViewDelegat
         bodyView.layer.cornerRadius = 4
         bodyView.layer.masksToBounds = true
         
-        
         if(indexPath.row == self.languageNativeRow){
             bodyView.backgroundColor = UIColor(red: 64/255, green: 148/255, blue: 74/255, alpha: 0.5)
         }else{
@@ -94,6 +93,7 @@ class RegisterNativeLanguageViewController: UIViewController, UITableViewDelegat
         self.tableViewLanguage.reloadData()
         
     }
+    
     @IBAction func saveParseLanguageNative(sender: UIButton) {
         self.btnNext.setTitle("", forState: UIControlState.Disabled)
         self.btnNext.enabled = false

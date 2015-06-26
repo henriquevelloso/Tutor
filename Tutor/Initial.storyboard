@@ -9,7 +9,7 @@
         <!--Dashboard View Controller-->
         <scene sceneID="HyZ-Jg-deY">
             <objects>
-                <viewController id="aOK-1j-R56" customClass="DashboardViewController" customModule="Tutor" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="vcDashboard" id="aOK-1j-R56" customClass="DashboardViewController" customModule="Tutor" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WtJ-er-uY1"/>
                         <viewControllerLayoutGuide type="bottom" id="ddi-0K-j69"/>
