@@ -14,6 +14,7 @@
 		C38EB43E1B3B226D006242C4 /* TTWelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38EB43D1B3B226D006242C4 /* TTWelcomeViewController.swift */; };
 		C3D67AFF1B3C6CF30036EBF8 /* Initial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3D67AFE1B3C6CF30036EBF8 /* Initial.storyboard */; };
 		C3D67B011B3C6F120036EBF8 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D67B001B3C6F120036EBF8 /* DashboardViewController.swift */; };
+		C3E1980F1B3D872B003D1F77 /* CallHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E1980E1B3D872B003D1F77 /* CallHistory.swift */; };
 		C5D37FD91B39A67D00487807 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D37FD81B39A67D00487807 /* AppDelegate.swift */; };
 		C5D37FDB1B39A67D00487807 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D37FDA1B39A67D00487807 /* ViewController.swift */; };
 		C5D37FDE1B39A67D00487807 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5D37FDC1B39A67D00487807 /* Main.storyboard */; };
@@ -42,6 +43,7 @@
 		C38EB43D1B3B226D006242C4 /* TTWelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTWelcomeViewController.swift; sourceTree = "<group>"; };
 		C3D67AFE1B3C6CF30036EBF8 /* Initial.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Initial.storyboard; sourceTree = "<group>"; };
 		C3D67B001B3C6F120036EBF8 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		C3E1980E1B3D872B003D1F77 /* CallHistory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallHistory.swift; sourceTree = "<group>"; };
 		C538BDFD1B3AE30B00028F0C /* Bridge-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridge-Header.h"; sourceTree = "<group>"; };
 		C5D37FD31B39A67D00487807 /* Tutor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tutor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5D37FD71B39A67D00487807 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 		C38EB43A1B3B2210006242C4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C3E1980E1B3D872B003D1F77 /* CallHistory.swift */,
 				C3587A121B3C5CE000AD0D0F /* User.swift */,
 			);
 			name = Model;
@@ -322,6 +325,7 @@
 				A680BA6B1B3C8C3100FF2EE6 /* CadastreViewController.swift in Sources */,
 				C5D37FDB1B39A67D00487807 /* ViewController.swift in Sources */,
 				C3D67B011B3C6F120036EBF8 /* DashboardViewController.swift in Sources */,
+				C3E1980F1B3D872B003D1F77 /* CallHistory.swift in Sources */,
 				C38EB43E1B3B226D006242C4 /* TTWelcomeViewController.swift in Sources */,
 				C5D37FD91B39A67D00487807 /* AppDelegate.swift in Sources */,
 			);

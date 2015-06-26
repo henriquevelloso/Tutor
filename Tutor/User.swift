@@ -51,7 +51,6 @@ class User: NSObject {
         self.getPhoto { (photoData, error) -> () in
             // nil
         }
-        
     }
     func saveWithBlock(response:(Bool, NSError?)->()){
         if let user = parseUser{
