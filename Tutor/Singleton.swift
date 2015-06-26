@@ -20,4 +20,15 @@ class Singleton {
         }
         return Static.instance!
     }
+        var language = NSMutableArray()
+    
+       // var languageArray = NSMutableArray()
+       // dai quando tu buscar lá do parse na primeira tela tu faz assim
+       // logo depois que buscou do parse
+       // self.s.languageArray = self.nativeLanguage
+//        deu
+//        teu array de idiomas vai estar preenchido
+//        não sei se colocquei o nome das variáveis certo ali
+//        e não lembro muito bem da sintaxe
+    
 }

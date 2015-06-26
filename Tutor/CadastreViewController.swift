@@ -11,13 +11,9 @@ import UIKit
 class CadastreViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableViewLanguage: UITableView!
-    @IBOutlet weak var btNext: UIButton!
-    
-    
-    var language = NSMutableArray()
     var languageNative:PFObject?
     var languageNativeRow:NSInteger = -1
-    
+    var s: Singleton = Singleton.sharedInstance
 
     @IBOutlet weak var btnNext: UIButton!
     
@@ -26,7 +22,7 @@ class CadastreViewController: UIViewController, UITableViewDelegate, UITableView
         
         // Do any additional setup after loading the view.
         
-        self.language = NSMutableArray()
+        self.s.language = NSMutableArray()
         
         self.btnNext.layer.masksToBounds = true
         self.btnNext.layer.cornerRadius = self.btnNext.frame.size.height / 2
@@ -38,15 +34,12 @@ class CadastreViewController: UIViewController, UITableViewDelegate, UITableView
             if error == nil {
                 if let objects = objects as? [PFObject] {
                     for object in objects {
-                        self.language.addObject(object)
+                        self.s.language.addObject(object)
                     }
                 }
                 self.tableViewLanguage.reloadData()
             }
         }
-        
-        
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -59,7 +52,7 @@ class CadastreViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.language.count
+        return self.s.language.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
@@ -68,8 +61,12 @@ class CadastreViewController: UIViewController, UITableViewDelegate, UITableView
         cell.selectionStyle = UITableViewCellSelectionStyle.None
         
         let label = cell.viewWithTag(1) as! UILabel
-        let languages = self.language[indexPath.row]["Name"] as! String // [indexPath.row/2]
+        let languages = self.s.language[indexPath.row]["Name"] as! String // [indexPath.row/2]
         label.text = languages
+        
+        let labelAcronym = cell.viewWithTag(3) as! UILabel
+        let acronym = self.s.language[indexPath.row]["Acronym"] as! String
+        labelAcronym.text = acronym
         
         let bodyView : UIView = cell.viewWithTag(2)!
         
@@ -91,25 +88,25 @@ class CadastreViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let cell = self.tableViewLanguage.cellForRowAtIndexPath(indexPath)
         
-        self.languageNative = self.language[indexPath.row] as? PFObject
+        self.languageNative = self.s.language[indexPath.row] as? PFObject
         self.languageNativeRow = indexPath.row
         self.tableViewLanguage.reloadData()
         
     }
     @IBAction func saveParseLanguageNative(sender: UIButton) {
-        self.btNext.setTitle("", forState: UIControlState.Disabled)
-        self.btNext.enabled = false
+        self.btnNext.setTitle("", forState: UIControlState.Disabled)
+        self.btnNext.enabled = false
         
         let aView : UIActivityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.White)
         aView.hidesWhenStopped = true
-        aView.center = self.btNext.center
+        aView.center = self.btnNext.center
         self.view.addSubview(aView)
         aView.startAnimating()
         
         let undoActivityIndicatorView : (() -> ()) = {
             aView.stopAnimating()
             aView.removeFromSuperview()
-            self.btNext.enabled = true
+            self.btnNext.enabled = true
         }
         
         if let user = User.user.parseUser
@@ -122,7 +119,7 @@ class CadastreViewController: UIViewController, UITableViewDelegate, UITableView
                 if let error = error{
                     //
                 }else{
-                    self.presentViewController(UIStoryboard(name: "Initial", bundle: nil).instantiateInitialViewController() as! UIViewController, animated: true, completion: nil)
+//                    self.presentViewController(UIStoryboard(name: "Initial", bundle: nil).instantiateInitialViewController() as! UIViewController, animated: true, completion: nil)
                 }
             })
         }else{
@@ -130,8 +127,5 @@ class CadastreViewController: UIViewController, UITableViewDelegate, UITableView
             // If user is not logged in...
             // should never happen :)
         }
-        
-        
-        
     }
 }
