@@ -135,7 +135,7 @@ class ViewController: UIViewController {
                             var gender : String = fb.objectForKey("gender") as! String
                             // locale = "pt_BR"
                             
-                            var imgProfileLink : String = "https://graph.facebook.com/\(fbid)/picture?type=large&return_ssl_resources=1"
+                            var imgProfileLink : String = "https://graph.facebook.com/\(fbid)/picture?width=999"
                             let imgProfileURL = NSURL(string: imgProfileLink)
                             let imgProfileData = NSData(contentsOfURL: imgProfileURL!)
                             
