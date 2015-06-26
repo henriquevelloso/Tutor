@@ -94,16 +94,23 @@ class RegisterPracticeLanguageViewController: UIViewController, UITableViewDeleg
         if let user = User.user.parseUser
         {
             
-            var lan:String = self.languageLearn!.objectId!
-            user.setObject(PFObject(withoutDataWithClassName: "Language", objectId: lan), forKey: "PracticeLanguage")
-            user.saveInBackgroundWithBlock({ (successed, error) -> Void in
-                undoActivityIndicatorView()
-                if let error = error{
-                    //
-                }else{
-                    self.presentViewController(UIStoryboard(name: "Initial", bundle: nil).instantiateInitialViewController() as! UIViewController, animated: true, completion: nil)
-                }
-            })
+            
+            if((self.languageNative?.isEqual("")) == nil){
+                var alert = UIAlertController(title: "Por Favor", message: "Selecione um idioma para aprender", preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+                self.presentViewController(alert, animated: true, completion: nil)
+            }else{
+                var lan:String = self.languageLearn!.objectId!
+                user.setObject(PFObject(withoutDataWithClassName: "Language", objectId: lan), forKey: "PracticeLanguage")
+                user.saveInBackgroundWithBlock({ (successed, error) -> Void in
+                    undoActivityIndicatorView()
+                    if let error = error{
+                        //
+                    }else{
+                        self.presentViewController(UIStoryboard(name: "Initial", bundle: nil).instantiateInitialViewController() as! UIViewController, animated: true, completion: nil)
+                    }
+                })
+            }
         }else{
             undoActivityIndicatorView()
             // If user is not logged in...

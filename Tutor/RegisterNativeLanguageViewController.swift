@@ -113,16 +113,22 @@ class RegisterNativeLanguageViewController: UIViewController, UITableViewDelegat
         if let user = User.user.parseUser
         {
             
-            var lan:String = self.languageNative!.objectId!
-            user.setObject(PFObject(withoutDataWithClassName: "Language", objectId: lan), forKey: "NativeLanguage")
-            user.saveInBackgroundWithBlock({ (successed, error) -> Void in
-                undoActivityIndicatorView()
-                if let error = error{
-                    //
-                }else{
-                    self.performSegueWithIdentifier("segueToPracticeLanguage", sender: nil)
-                }
-            })
+            if((self.languageNative?.isEqual("")) == nil){
+                var alert = UIAlertController(title: "Por Favor", message: "Selecione seu idioma nativo", preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+                self.presentViewController(alert, animated: true, completion: nil)
+            }else{
+                var lan:String = self.languageNative!.objectId!
+                user.setObject(PFObject(withoutDataWithClassName: "Language", objectId: lan), forKey: "NativeLanguage")
+                user.saveInBackgroundWithBlock({ (successed, error) -> Void in
+                    undoActivityIndicatorView()
+                    if let error = error{
+                        //
+                    }else{
+                        self.performSegueWithIdentifier("segueToPracticeLanguage", sender: nil)
+                    }
+                })
+            }
         }else{
             undoActivityIndicatorView()
             // If user is not logged in...
