@@ -1,52 +1,35 @@
 //
-//  CadastreViewController.swift
+//  CadastreLearnViewController.swift
 //  Tutor
 //
-//  Created by Natasha Flores on 6/25/15.
+//  Created by Natasha Flores on 6/26/15.
 //  Copyright (c) 2015 BEPiD. All rights reserved.
 //
 
 import UIKit
 
-class CadastreViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
+class CadastreLearnViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+
     @IBOutlet weak var tableViewLanguage: UITableView!
     var languageNative:PFObject?
-    var languageNativeRow:NSInteger = -1
+    var languageLearnRow:NSInteger = -1
+    var languageLearn:PFObject?
     var s: Singleton = Singleton.sharedInstance
-
-    @IBOutlet weak var btnNext: UIButton!
+    @IBOutlet weak var btnSave: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
-        
-        self.s.language = NSMutableArray()
-        
-        self.btnNext.layer.masksToBounds = true
-        self.btnNext.layer.cornerRadius = self.btnNext.frame.size.height / 2
-        
-        // Get languages of Parse
-        var query = PFQuery(className:"Language")
-        query.findObjectsInBackgroundWithBlock {
-            (objects, error) -> Void in
-            if error == nil {
-                if let objects = objects as? [PFObject] {
-                    for object in objects {
-                        self.s.language.addObject(object)
-                    }
-                }
-                self.tableViewLanguage.reloadData()
-            }
-        }
+        self.btnSave.layer.masksToBounds = true
+        self.btnSave.layer.cornerRadius = self.btnSave.frame.size.height / 2
+        self.tableViewLanguage.reloadData()
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
@@ -56,12 +39,11 @@ class CadastreViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
-        
-        let cell = tableView.dequeueReusableCellWithIdentifier("Language", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("LanguageLearn", forIndexPath: indexPath) as! UITableViewCell
         cell.selectionStyle = UITableViewCellSelectionStyle.None
         
         let label = cell.viewWithTag(1) as! UILabel
-        let languages = self.s.language[indexPath.row]["Name"] as! String // [indexPath.row/2]
+        let languages = self.s.language[indexPath.row]["Name"] as! String
         label.text = languages
         
         let labelAcronym = cell.viewWithTag(3) as! UILabel
@@ -73,53 +55,54 @@ class CadastreViewController: UIViewController, UITableViewDelegate, UITableView
         bodyView.layer.cornerRadius = 4
         bodyView.layer.masksToBounds = true
         
-        
-        if(indexPath.row == self.languageNativeRow){
+        if(indexPath.row == self.languageLearnRow){
             bodyView.backgroundColor = UIColor(red: 64/255, green: 148/255, blue: 74/255, alpha: 0.5)
         }else{
             bodyView.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.5)
         }
         
-        
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
         return cell
+
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let cell = self.tableViewLanguage.cellForRowAtIndexPath(indexPath)
         
-        self.languageNative = self.s.language[indexPath.row] as? PFObject
-        self.languageNativeRow = indexPath.row
+        self.languageLearn = self.s.language[indexPath.row] as? PFObject
+        self.languageLearnRow = indexPath.row
         self.tableViewLanguage.reloadData()
         
     }
-    @IBAction func saveParseLanguageNative(sender: UIButton) {
-        self.btnNext.setTitle("", forState: UIControlState.Disabled)
-        self.btnNext.enabled = false
+    
+    @IBAction func saveParseLanguageLearn(sender: UIButton) {
+        self.btnSave.setTitle("", forState: UIControlState.Disabled)
+        self.btnSave.enabled = false
         
         let aView : UIActivityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.White)
         aView.hidesWhenStopped = true
-        aView.center = self.btnNext.center
+        aView.center = self.btnSave.center
         self.view.addSubview(aView)
         aView.startAnimating()
         
         let undoActivityIndicatorView : (() -> ()) = {
             aView.stopAnimating()
             aView.removeFromSuperview()
-            self.btnNext.enabled = true
+            self.btnSave.enabled = true
         }
         
         if let user = User.user.parseUser
         {
             
-            var lan:String = self.languageNative!.objectId!
-            user.setObject(PFObject(withoutDataWithClassName: "Language", objectId: lan), forKey: "NativeLanguage")
+            var lan:String = self.languageLearn!.objectId!
+            user.setObject(PFObject(withoutDataWithClassName: "Language", objectId: lan), forKey: "PracticeLanguage")
             user.saveInBackgroundWithBlock({ (successed, error) -> Void in
                 undoActivityIndicatorView()
                 if let error = error{
                     //
                 }else{
-//                    self.presentViewController(UIStoryboard(name: "Initial", bundle: nil).instantiateInitialViewController() as! UIViewController, animated: true, completion: nil)
+                    self.presentViewController(UIStoryboard(name: "Initial", bundle: nil).instantiateInitialViewController() as! UIViewController, animated: true, completion: nil)
                 }
             })
         }else{
@@ -127,5 +110,12 @@ class CadastreViewController: UIViewController, UITableViewDelegate, UITableView
             // If user is not logged in...
             // should never happen :)
         }
+        
+        
+        
     }
+    
+    
+    
+
 }

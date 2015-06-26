@@ -12,6 +12,7 @@
 		C3587A131B3C5CE000AD0D0F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3587A121B3C5CE000AD0D0F /* User.swift */; };
 		C38EB4391B3B13E7006242C4 /* AdmiralCAT.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C38EB4381B3B1394006242C4 /* AdmiralCAT.ttf */; };
 		C38EB43E1B3B226D006242C4 /* TTWelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38EB43D1B3B226D006242C4 /* TTWelcomeViewController.swift */; };
+		C3BF1F841B3DAE8500379F88 /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF0B63A1B3D7A2E00C068B6 /* Singleton.swift */; };
 		C3D67AFF1B3C6CF30036EBF8 /* Initial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3D67AFE1B3C6CF30036EBF8 /* Initial.storyboard */; };
 		C3D67B011B3C6F120036EBF8 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D67B001B3C6F120036EBF8 /* DashboardViewController.swift */; };
 		C3E1980F1B3D872B003D1F77 /* CallHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E1980E1B3D872B003D1F77 /* CallHistory.swift */; };
@@ -21,6 +22,7 @@
 		C5D37FE01B39A67D00487807 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5D37FDF1B39A67D00487807 /* Images.xcassets */; };
 		C5D37FE31B39A67D00487807 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5D37FE11B39A67D00487807 /* LaunchScreen.xib */; };
 		C5D37FEF1B39A67D00487807 /* TutorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D37FEE1B39A67D00487807 /* TutorTests.swift */; };
+		EBF0B6391B3D78C600C068B6 /* CadastreLearnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF0B6381B3D78C600C068B6 /* CadastreLearnViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		C5D37FE81B39A67D00487807 /* TutorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TutorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5D37FED1B39A67D00487807 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C5D37FEE1B39A67D00487807 /* TutorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorTests.swift; sourceTree = "<group>"; };
+		EBF0B6381B3D78C600C068B6 /* CadastreLearnViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CadastreLearnViewController.swift; sourceTree = "<group>"; };
+		EBF0B63A1B3D7A2E00C068B6 /* Singleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +94,7 @@
 			children = (
 				C3E1980E1B3D872B003D1F77 /* CallHistory.swift */,
 				C3587A121B3C5CE000AD0D0F /* User.swift */,
+				EBF0B63A1B3D7A2E00C068B6 /* Singleton.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -111,6 +116,7 @@
 				C38EB43D1B3B226D006242C4 /* TTWelcomeViewController.swift */,
 				C5D37FDA1B39A67D00487807 /* ViewController.swift */,
 				A680BA6A1B3C8C3100FF2EE6 /* CadastreViewController.swift */,
+				EBF0B6381B3D78C600C068B6 /* CadastreLearnViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -321,6 +327,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3BF1F841B3DAE8500379F88 /* Singleton.swift in Sources */,
+				EBF0B6391B3D78C600C068B6 /* CadastreLearnViewController.swift in Sources */,
 				C3587A131B3C5CE000AD0D0F /* User.swift in Sources */,
 				A680BA6B1B3C8C3100FF2EE6 /* CadastreViewController.swift in Sources */,
 				C5D37FDB1B39A67D00487807 /* ViewController.swift in Sources */,
