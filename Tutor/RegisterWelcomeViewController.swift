@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TTWelcomeViewController: UIViewController {
+class RegisterWelcomeViewController: UIViewController {
 
     @IBOutlet weak var imgUserProfile: UIImageView!
     @IBOutlet weak var btNext: UIButton!
@@ -42,7 +42,7 @@ class TTWelcomeViewController: UIViewController {
     }
     
     @IBAction func btNextTouchUpInsideAction(sender: AnyObject) {
-//        self.presentViewController(UIStoryboard(name: "Initial", bundle: nil).instantiateInitialViewController() as! UIViewController, animated: true, completion: nil)
+        self.performSegueWithIdentifier("segueToNativeLanguage", sender: nil)
     }
 
     /*

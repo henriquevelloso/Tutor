@@ -8,14 +8,18 @@
 
 import UIKit
 
-class CadastreLearnViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class RegisterPracticeLanguageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableViewLanguage: UITableView!
+    @IBOutlet weak var btnSave: UIButton!
+    
     var languageNative:PFObject?
     var languageLearnRow:NSInteger = -1
     var languageLearn:PFObject?
+    
     var s: Singleton = Singleton.sharedInstance
-    @IBOutlet weak var btnSave: UIButton!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,11 +31,6 @@ class CadastreLearnViewController: UIViewController, UITableViewDelegate, UITabl
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

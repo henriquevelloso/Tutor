@@ -8,14 +8,15 @@
 
 import UIKit
 
-class CadastreViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class RegisterNativeLanguageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableViewLanguage: UITableView!
+    @IBOutlet weak var btnNext: UIButton!
+    
     var languageNative:PFObject?
     var languageNativeRow:NSInteger = -1
     var s: Singleton = Singleton.sharedInstance
 
-    @IBOutlet weak var btnNext: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -119,7 +120,7 @@ class CadastreViewController: UIViewController, UITableViewDelegate, UITableView
                 if let error = error{
                     //
                 }else{
-//                    self.presentViewController(UIStoryboard(name: "Initial", bundle: nil).instantiateInitialViewController() as! UIViewController, animated: true, completion: nil)
+                    self.performSegueWithIdentifier("segueToPracticeLanguage", sender: nil)
                 }
             })
         }else{

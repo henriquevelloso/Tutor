@@ -8,21 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		3CDC0101F8CB29AA9ED1BCD5 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5557560F9801DEAAE8E1D9DB /* libPods.a */; };
-		A680BA6B1B3C8C3100FF2EE6 /* CadastreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A680BA6A1B3C8C3100FF2EE6 /* CadastreViewController.swift */; };
+		A680BA6B1B3C8C3100FF2EE6 /* RegisterNativeLanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A680BA6A1B3C8C3100FF2EE6 /* RegisterNativeLanguageViewController.swift */; };
 		C3587A131B3C5CE000AD0D0F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3587A121B3C5CE000AD0D0F /* User.swift */; };
 		C38EB4391B3B13E7006242C4 /* AdmiralCAT.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C38EB4381B3B1394006242C4 /* AdmiralCAT.ttf */; };
-		C38EB43E1B3B226D006242C4 /* TTWelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38EB43D1B3B226D006242C4 /* TTWelcomeViewController.swift */; };
+		C38EB43E1B3B226D006242C4 /* RegisterWelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38EB43D1B3B226D006242C4 /* RegisterWelcomeViewController.swift */; };
 		C3BF1F841B3DAE8500379F88 /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF0B63A1B3D7A2E00C068B6 /* Singleton.swift */; };
 		C3D67AFF1B3C6CF30036EBF8 /* Initial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3D67AFE1B3C6CF30036EBF8 /* Initial.storyboard */; };
 		C3D67B011B3C6F120036EBF8 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D67B001B3C6F120036EBF8 /* DashboardViewController.swift */; };
 		C3E1980F1B3D872B003D1F77 /* CallHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E1980E1B3D872B003D1F77 /* CallHistory.swift */; };
 		C5D37FD91B39A67D00487807 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D37FD81B39A67D00487807 /* AppDelegate.swift */; };
-		C5D37FDB1B39A67D00487807 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D37FDA1B39A67D00487807 /* ViewController.swift */; };
+		C5D37FDB1B39A67D00487807 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D37FDA1B39A67D00487807 /* LoginViewController.swift */; };
 		C5D37FDE1B39A67D00487807 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5D37FDC1B39A67D00487807 /* Main.storyboard */; };
 		C5D37FE01B39A67D00487807 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5D37FDF1B39A67D00487807 /* Images.xcassets */; };
 		C5D37FE31B39A67D00487807 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5D37FE11B39A67D00487807 /* LaunchScreen.xib */; };
 		C5D37FEF1B39A67D00487807 /* TutorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D37FEE1B39A67D00487807 /* TutorTests.swift */; };
-		EBF0B6391B3D78C600C068B6 /* CadastreLearnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF0B6381B3D78C600C068B6 /* CadastreLearnViewController.swift */; };
+		EBF0B6391B3D78C600C068B6 /* RegisterPracticeLanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF0B6381B3D78C600C068B6 /* RegisterPracticeLanguageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,10 +39,10 @@
 		1A50665D2D9603E21E779305 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		5557560F9801DEAAE8E1D9DB /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		87766B01811F6F24C3FFAEA1 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		A680BA6A1B3C8C3100FF2EE6 /* CadastreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CadastreViewController.swift; sourceTree = "<group>"; };
+		A680BA6A1B3C8C3100FF2EE6 /* RegisterNativeLanguageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterNativeLanguageViewController.swift; sourceTree = "<group>"; };
 		C3587A121B3C5CE000AD0D0F /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C38EB4381B3B1394006242C4 /* AdmiralCAT.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AdmiralCAT.ttf; sourceTree = "<group>"; };
-		C38EB43D1B3B226D006242C4 /* TTWelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTWelcomeViewController.swift; sourceTree = "<group>"; };
+		C38EB43D1B3B226D006242C4 /* RegisterWelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterWelcomeViewController.swift; sourceTree = "<group>"; };
 		C3D67AFE1B3C6CF30036EBF8 /* Initial.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Initial.storyboard; sourceTree = "<group>"; };
 		C3D67B001B3C6F120036EBF8 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		C3E1980E1B3D872B003D1F77 /* CallHistory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallHistory.swift; sourceTree = "<group>"; };
@@ -50,14 +50,14 @@
 		C5D37FD31B39A67D00487807 /* Tutor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tutor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5D37FD71B39A67D00487807 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C5D37FD81B39A67D00487807 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C5D37FDA1B39A67D00487807 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C5D37FDA1B39A67D00487807 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C5D37FDD1B39A67D00487807 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C5D37FDF1B39A67D00487807 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C5D37FE21B39A67D00487807 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		C5D37FE81B39A67D00487807 /* TutorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TutorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5D37FED1B39A67D00487807 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C5D37FEE1B39A67D00487807 /* TutorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorTests.swift; sourceTree = "<group>"; };
-		EBF0B6381B3D78C600C068B6 /* CadastreLearnViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CadastreLearnViewController.swift; sourceTree = "<group>"; };
+		EBF0B6381B3D78C600C068B6 /* RegisterPracticeLanguageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterPracticeLanguageViewController.swift; sourceTree = "<group>"; };
 		EBF0B63A1B3D7A2E00C068B6 /* Singleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -113,10 +113,10 @@
 			isa = PBXGroup;
 			children = (
 				C3D67B001B3C6F120036EBF8 /* DashboardViewController.swift */,
-				C38EB43D1B3B226D006242C4 /* TTWelcomeViewController.swift */,
-				C5D37FDA1B39A67D00487807 /* ViewController.swift */,
-				A680BA6A1B3C8C3100FF2EE6 /* CadastreViewController.swift */,
-				EBF0B6381B3D78C600C068B6 /* CadastreLearnViewController.swift */,
+				C38EB43D1B3B226D006242C4 /* RegisterWelcomeViewController.swift */,
+				C5D37FDA1B39A67D00487807 /* LoginViewController.swift */,
+				A680BA6A1B3C8C3100FF2EE6 /* RegisterNativeLanguageViewController.swift */,
+				EBF0B6381B3D78C600C068B6 /* RegisterPracticeLanguageViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -328,13 +328,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3BF1F841B3DAE8500379F88 /* Singleton.swift in Sources */,
-				EBF0B6391B3D78C600C068B6 /* CadastreLearnViewController.swift in Sources */,
+				EBF0B6391B3D78C600C068B6 /* RegisterPracticeLanguageViewController.swift in Sources */,
 				C3587A131B3C5CE000AD0D0F /* User.swift in Sources */,
-				A680BA6B1B3C8C3100FF2EE6 /* CadastreViewController.swift in Sources */,
-				C5D37FDB1B39A67D00487807 /* ViewController.swift in Sources */,
+				A680BA6B1B3C8C3100FF2EE6 /* RegisterNativeLanguageViewController.swift in Sources */,
+				C5D37FDB1B39A67D00487807 /* LoginViewController.swift in Sources */,
 				C3D67B011B3C6F120036EBF8 /* DashboardViewController.swift in Sources */,
 				C3E1980F1B3D872B003D1F77 /* CallHistory.swift in Sources */,
-				C38EB43E1B3B226D006242C4 /* TTWelcomeViewController.swift in Sources */,
+				C38EB43E1B3B226D006242C4 /* RegisterWelcomeViewController.swift in Sources */,
 				C5D37FD91B39A67D00487807 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
