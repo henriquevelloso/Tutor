@@ -355,6 +355,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btNext" destination="opB-Kj-arq" id="yWD-1u-TOo"/>
                         <outlet property="btnNext" destination="opB-Kj-arq" id="Zd2-Eh-QfR"/>
                         <outlet property="tableViewLanguage" destination="b1K-cj-ug9" id="vMs-yz-s04"/>
                     </connections>

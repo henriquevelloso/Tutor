@@ -10,8 +10,11 @@ import UIKit
 
 class CadastreViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var language = NSMutableArray()
     @IBOutlet weak var tableViewLanguage: UITableView!
+    @IBOutlet weak var btNext: UIButton!
+    
+    
+    var language = NSMutableArray()
     var languageNative:PFObject?
     var languageNativeRow:NSInteger = -1
 
@@ -91,9 +94,41 @@ class CadastreViewController: UIViewController, UITableViewDelegate, UITableView
         
     }
     @IBAction func saveParseLanguageNative(sender: UIButton) {
-        var userLanguageNative = PFUser.currentUser()
-        var lan:String = self.languageNative!.objectId!
-        userLanguageNative?.setObject(PFObject(withoutDataWithClassName: "Language", objectId: lan), forKey: "NativeLanguage")
-        userLanguageNative?.saveInBackground()
+        self.btNext.setTitle("", forState: UIControlState.Disabled)
+        self.btNext.enabled = false
+        
+        let aView : UIActivityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.White)
+        aView.hidesWhenStopped = true
+        aView.center = self.btNext.center
+        self.view.addSubview(aView)
+        aView.startAnimating()
+        
+        let undoActivityIndicatorView : (() -> ()) = {
+            aView.stopAnimating()
+            aView.removeFromSuperview()
+            self.btNext.enabled = true
+        }
+        
+        if let user = User.user.parseUser
+        {
+            
+            var lan:String = self.languageNative!.objectId!
+            user.setObject(PFObject(withoutDataWithClassName: "Language", objectId: lan), forKey: "NativeLanguage")
+            user.saveInBackgroundWithBlock({ (successed, error) -> Void in
+                undoActivityIndicatorView()
+                if let error = error{
+                    //
+                }else{
+                    self.presentViewController(UIStoryboard(name: "Initial", bundle: nil).instantiateInitialViewController() as! UIViewController, animated: true, completion: nil)
+                }
+            })
+        }else{
+            undoActivityIndicatorView()
+            // If user is not logged in...
+            // should never happen :)
+        }
+        
+        
+        
     }
 }
