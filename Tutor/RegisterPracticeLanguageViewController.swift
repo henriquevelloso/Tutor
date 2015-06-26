@@ -95,7 +95,8 @@ class RegisterPracticeLanguageViewController: UIViewController, UITableViewDeleg
         {
             
             
-            if((self.languageNative?.isEqual("")) == nil){
+            if((self.languageLearn?.isEqual("")) == nil){
+                undoActivityIndicatorView()
                 var alert = UIAlertController(title: "Por Favor", message: "Selecione um idioma para aprender", preferredStyle: UIAlertControllerStyle.Alert)
                 alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
                 self.presentViewController(alert, animated: true, completion: nil)

@@ -114,6 +114,7 @@ class RegisterNativeLanguageViewController: UIViewController, UITableViewDelegat
         {
             
             if((self.languageNative?.isEqual("")) == nil){
+                undoActivityIndicatorView()
                 var alert = UIAlertController(title: "Por Favor", message: "Selecione seu idioma nativo", preferredStyle: UIAlertControllerStyle.Alert)
                 alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
                 self.presentViewController(alert, animated: true, completion: nil)
