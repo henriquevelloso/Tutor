@@ -369,7 +369,7 @@
                     <connections>
                         <outlet property="btnNext" destination="opB-Kj-arq" id="Zd2-Eh-QfR"/>
                         <outlet property="tableViewLanguage" destination="b1K-cj-ug9" id="vMs-yz-s04"/>
-                        <segue destination="kA7-BJ-a6R" kind="presentation" identifier="segueToPracticeLanguage" modalTransitionStyle="crossDissolve" id="OHa-SK-FAj"/>
+                        <segue destination="kA7-BJ-a6R" kind="presentation" identifier="segueToPracticeLanguage" modalTransitionStyle="flipHorizontal" id="OHa-SK-FAj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lbp-zA-YrB" userLabel="First Responder" sceneMemberID="firstResponder"/>
