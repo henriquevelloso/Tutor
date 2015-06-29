@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3CDC0101F8CB29AA9ED1BCD5 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5557560F9801DEAAE8E1D9DB /* libPods.a */; };
 		A680BA6B1B3C8C3100FF2EE6 /* RegisterNativeLanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A680BA6A1B3C8C3100FF2EE6 /* RegisterNativeLanguageViewController.swift */; };
+		C335B53B1B417C5900AB95AD /* PopUpChangeCurrentLanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C335B53A1B417C5900AB95AD /* PopUpChangeCurrentLanguageViewController.swift */; };
 		C3587A131B3C5CE000AD0D0F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3587A121B3C5CE000AD0D0F /* User.swift */; };
 		C38EB4391B3B13E7006242C4 /* AdmiralCAT.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C38EB4381B3B1394006242C4 /* AdmiralCAT.ttf */; };
 		C38EB43E1B3B226D006242C4 /* RegisterWelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38EB43D1B3B226D006242C4 /* RegisterWelcomeViewController.swift */; };
@@ -40,6 +41,7 @@
 		5557560F9801DEAAE8E1D9DB /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		87766B01811F6F24C3FFAEA1 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		A680BA6A1B3C8C3100FF2EE6 /* RegisterNativeLanguageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterNativeLanguageViewController.swift; sourceTree = "<group>"; };
+		C335B53A1B417C5900AB95AD /* PopUpChangeCurrentLanguageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpChangeCurrentLanguageViewController.swift; sourceTree = "<group>"; };
 		C3587A121B3C5CE000AD0D0F /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C38EB4381B3B1394006242C4 /* AdmiralCAT.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AdmiralCAT.ttf; sourceTree = "<group>"; };
 		C38EB43D1B3B226D006242C4 /* RegisterWelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterWelcomeViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 			children = (
 				C3D67B001B3C6F120036EBF8 /* DashboardViewController.swift */,
 				C5D37FDA1B39A67D00487807 /* LoginViewController.swift */,
+				C335B53A1B417C5900AB95AD /* PopUpChangeCurrentLanguageViewController.swift */,
 				C3BF1F851B3DB94600379F88 /* Register */,
 			);
 			name = Controller;
@@ -336,6 +339,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3BF1F841B3DAE8500379F88 /* Singleton.swift in Sources */,
+				C335B53B1B417C5900AB95AD /* PopUpChangeCurrentLanguageViewController.swift in Sources */,
 				EBF0B6391B3D78C600C068B6 /* RegisterPracticeLanguageViewController.swift in Sources */,
 				C3587A131B3C5CE000AD0D0F /* User.swift in Sources */,
 				A680BA6B1B3C8C3100FF2EE6 /* RegisterNativeLanguageViewController.swift in Sources */,

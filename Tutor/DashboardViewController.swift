@@ -21,6 +21,8 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     
     @IBOutlet weak var tableRecentCalls: UITableView!
     
+    var popup : UIViewController?
+    
     var recentCalls : NSArray?
     
     let radius : (UIView) -> () = { lView in
@@ -169,6 +171,15 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         PFUser.logOut()
         self.presentViewController(UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as! UIViewController, animated: true, completion: nil)
     }
+    @IBAction func btChangeLanguageTouchUpInsideAction(sender: UIButton) {
+        self.popup = UIStoryboard(name: "Initial", bundle: nil).instantiateViewControllerWithIdentifier("vcPopUpChangeCurrentLanguage") as! UIViewController
+        
+        if let popup = self.popup as? PopUpChangeCurrentLanguageViewController
+        {
+            popup.showIn(self)
+        }
+    }
+    
     
     
     // Functions
