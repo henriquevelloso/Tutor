@@ -47,6 +47,16 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         if let name = User.user.name{
             self.lblName.text = name
         }
+        User.user.getCurrentLanguage { (language) -> () in
+            if let currentLang = language
+            {
+                if let name = currentLang.objectForKey("Name") as? String
+                {
+                    self.btLanguage.setTitle("Praticando \(name)", forState: UIControlState.Normal)
+                }
+            }
+        }
+        
         User.user.getPhoto { (photoData, error) -> () in
             if let photoData = photoData
             {

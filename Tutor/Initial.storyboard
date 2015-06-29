@@ -61,7 +61,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38" id="q5n-Qj-w2u"/>
                                 </constraints>
-                                <state key="normal" title="Learning Language">
+                                <state key="normal">
                                     <color key="titleColor" red="0.9960784912109375" green="0.99215692281723022" blue="0.99215692281723022" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>

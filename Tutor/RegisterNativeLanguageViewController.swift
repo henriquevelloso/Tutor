@@ -15,32 +15,21 @@ class RegisterNativeLanguageViewController: UIViewController, UITableViewDelegat
     
     var languageNative:PFObject?
     var languageNativeRow:NSInteger = -1
-    var s: Singleton = Singleton.sharedInstance
-
+    
+    var languages : NSArray?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
         
-        self.s.language = NSMutableArray()
+        Singleton.getLanguages { (langs) -> () in
+            self.languages = langs
+            self.tableViewLanguage.reloadData()
+        }
         
         self.btnNext.layer.masksToBounds = true
         self.btnNext.layer.cornerRadius = self.btnNext.frame.size.height / 2
-        
-        // Get languages of Parse
-        var query = PFQuery(className:"Language")
-        query.findObjectsInBackgroundWithBlock {
-            (objects, error) -> Void in
-            if error == nil {
-                if let objects = objects as? [PFObject] {
-                    for object in objects {
-                        self.s.language.addObject(object)
-                    }
-                }
-                self.tableViewLanguage.reloadData()
-            }
-        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -53,7 +42,12 @@ class RegisterNativeLanguageViewController: UIViewController, UITableViewDelegat
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.s.language.count
+        if let languages = self.languages
+        {
+            return languages.count
+        }else{
+            return 0
+        }
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
@@ -61,37 +55,42 @@ class RegisterNativeLanguageViewController: UIViewController, UITableViewDelegat
         let cell = tableView.dequeueReusableCellWithIdentifier("Language", forIndexPath: indexPath) as! UITableViewCell
         cell.selectionStyle = UITableViewCellSelectionStyle.None
         
-        let label = cell.viewWithTag(1) as! UILabel
-        let languages = self.s.language[indexPath.row]["Name"] as! String // [indexPath.row/2]
-        label.text = languages
-        
-        let labelAcronym = cell.viewWithTag(3) as! UILabel
-        let acronym = self.s.language[indexPath.row]["Acronym"] as! String
-        labelAcronym.text = acronym
-        
-        let bodyView : UIView = cell.viewWithTag(2)!
-        
-        bodyView.layer.cornerRadius = 4
-        bodyView.layer.masksToBounds = true
-        
-        if(indexPath.row == self.languageNativeRow){
-            bodyView.backgroundColor = UIColor(red: 64/255, green: 148/255, blue: 74/255, alpha: 0.5)
-        }else{
-            bodyView.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.5)
+        if let languages = self.languages{
+            let label = cell.viewWithTag(1) as! UILabel
+            let langName = languages[indexPath.row]["Name"] as! String
+            label.text = langName
+            
+            let labelAcronym = cell.viewWithTag(3) as! UILabel
+            let acronym = languages[indexPath.row]["Acronym"] as! String
+            labelAcronym.text = acronym
+            
+            let bodyView : UIView = cell.viewWithTag(2)!
+            
+            bodyView.layer.cornerRadius = 4
+            bodyView.layer.masksToBounds = true
+            
+            if(indexPath.row == self.languageNativeRow){
+                bodyView.backgroundColor = UIColor(red: 64/255, green: 148/255, blue: 74/255, alpha: 0.5)
+            }else{
+                bodyView.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.5)
+            }
         }
-        
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let cell = self.tableViewLanguage.cellForRowAtIndexPath(indexPath)
         
-        self.languageNative = self.s.language[indexPath.row] as? PFObject
-        self.languageNativeRow = indexPath.row
-        self.tableViewLanguage.reloadData()
         
+        if let languages = self.languages{
+            let cell = self.tableViewLanguage.cellForRowAtIndexPath(indexPath)
+            
+            self.languageNative = languages[indexPath.row] as? PFObject
+            self.languageNativeRow = indexPath.row
+            self.tableViewLanguage.reloadData()
+            
+        }
     }
     
     @IBAction func saveParseLanguageNative(sender: UIButton) {
@@ -112,15 +111,11 @@ class RegisterNativeLanguageViewController: UIViewController, UITableViewDelegat
         
         if let user = User.user.parseUser
         {
-            
-            if((self.languageNative?.isEqual("")) == nil){
-                undoActivityIndicatorView()
-                var alert = UIAlertController(title: "Por Favor", message: "Selecione seu idioma nativo", preferredStyle: UIAlertControllerStyle.Alert)
-                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
-                self.presentViewController(alert, animated: true, completion: nil)
-            }else{
-                var lan:String = self.languageNative!.objectId!
-                user.setObject(PFObject(withoutDataWithClassName: "Language", objectId: lan), forKey: "NativeLanguage")
+            if let native = self.languageNative{
+                
+                User.user.nativeLang = native
+                
+                user.setObject(native, forKey: "NativeLanguage")
                 user.saveInBackgroundWithBlock({ (successed, error) -> Void in
                     undoActivityIndicatorView()
                     if let error = error{
@@ -129,6 +124,14 @@ class RegisterNativeLanguageViewController: UIViewController, UITableViewDelegat
                         self.performSegueWithIdentifier("segueToPracticeLanguage", sender: nil)
                     }
                 })
+                
+            }else{
+                
+                undoActivityIndicatorView()
+                var alert = UIAlertController(title: "Por Favor", message: "Selecione seu idioma nativo", preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+                self.presentViewController(alert, animated: true, completion: nil)
+                
             }
         }else{
             undoActivityIndicatorView()

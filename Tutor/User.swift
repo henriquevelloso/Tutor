@@ -19,6 +19,59 @@ class User: NSObject {
     var gender : String?
     
     var photo : NSData?
+    
+    var nativeLang : PFObject?
+    var currentLang : PFObject?
+    
+    func getNativeLanguage(response: (PFObject?) -> ())
+    {
+        if let native = self.nativeLang {
+            response(native)
+        }else{
+            if let user = self.parseUser
+            {
+                if let langObjID = user.objectForKey("NativeLanguage")?.objectId
+                {
+                    let query = PFQuery(className: "Language")
+                    
+                    query.getObjectInBackgroundWithId(langObjID!, block: { (lang, error) -> Void in
+                        if let lang = lang
+                        {
+                            self.nativeLang = lang
+                        }
+                        response(self.nativeLang)
+                    })
+                    
+                }
+            }
+        }
+    }
+    func getCurrentLanguage(response: (PFObject?) -> ())
+    {
+        if let current = currentLang
+        {
+            response(current)
+        }else{
+            
+            if let user = self.parseUser
+            {
+                if let langObjID = user.objectForKey("PracticeLanguage")?.objectId
+                {
+                    let query = PFQuery(className: "Language")
+                    
+                    query.getObjectInBackgroundWithId(langObjID!, block: { (lang, error) -> Void in
+                        if let lang = lang
+                        {
+                            self.currentLang = lang
+                        }
+                        response(self.currentLang)
+                    })
+                    
+                }
+            }
+        }
+    }
+    
     func getPhoto(response:(NSData?, NSError?)->())
     {
         if let photo = photo
@@ -48,6 +101,11 @@ class User: NSObject {
         self.gender = puser.objectForKey("gender") as? String
         self.email = puser.email
         
+        let query : PFQuery = PFQuery()
+        query.includeKey("PracticeLanguage")
+        query.includeKey("NativeLanguage")
+        
+        
         self.getPhoto { (photoData, error) -> () in
             // nil
         }
@@ -71,6 +129,7 @@ class User: NSObject {
             {
                 user.setObject(gender, forKey: "gender")
             }
+            
             
             if let photo = self.photo
             {
