@@ -20,7 +20,7 @@ class EditProfileViewController: UIViewController, UITableViewDelegate, UITableV
     
     @IBOutlet weak var imageProfile: UIImageView!
     
-    var practiceLangugeSet = Set<PFObject>()
+    var practiceLangugeSet = Set<String>()
     
     let radius : (UIView) -> () = { lView in
         lView.layer.masksToBounds = true
@@ -60,7 +60,6 @@ class EditProfileViewController: UIViewController, UITableViewDelegate, UITableV
         
         var query = PFQuery(className: "CallHistory")
         query.includeKey("PracticeLanguage")
-        
         query.whereKey("MadeCall", equalTo: PFUser.currentUser()!)
         query.findObjectsInBackgroundWithBlock{
             (objects, error) -> Void in
@@ -68,8 +67,8 @@ class EditProfileViewController: UIViewController, UITableViewDelegate, UITableV
                 if let objects = objects as? [PFObject]{
                     for object in objects {
                         let practice = object["PracticeLanguage"] as! PFObject
-                        println(practice.objectForKey("Name"))
-                        //self.practiceLangugeSet.insert()
+                        let s = practice.objectForKey("Name") as! String
+                        self.practiceLangugeSet.insert(s)
                     }
                 }
                 print(self.practiceLangugeSet.description)
@@ -82,12 +81,6 @@ class EditProfileViewController: UIViewController, UITableViewDelegate, UITableV
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-//    override func viewWillAppear(animated: Bool) {
-//
-//        
-//    }
-
     
     @IBAction func BackDashBoard(sender: UIButton) {
         self.performSegueWithIdentifier("BackDashBoard", sender: nil)
@@ -109,8 +102,8 @@ class EditProfileViewController: UIViewController, UITableViewDelegate, UITableV
         let labelAcronym = cell.viewWithTag(1) as! UILabel
         
         let pf = self.practiceLangugeSet[advance(self.practiceLangugeSet.startIndex, indexPath.row)]
-        labelName.text = pf.objectForKey("Name") as? String
-        labelAcronym.text = pf.objectForKey("Acronym") as? String
+
+        labelName.text = pf
         
         return cell
     }

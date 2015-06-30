@@ -23,19 +23,8 @@
 		C5D37FDE1B39A67D00487807 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5D37FDC1B39A67D00487807 /* Main.storyboard */; };
 		C5D37FE01B39A67D00487807 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5D37FDF1B39A67D00487807 /* Images.xcassets */; };
 		C5D37FE31B39A67D00487807 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5D37FE11B39A67D00487807 /* LaunchScreen.xib */; };
-		C5D37FEF1B39A67D00487807 /* TutorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D37FEE1B39A67D00487807 /* TutorTests.swift */; };
 		EBF0B6391B3D78C600C068B6 /* RegisterPracticeLanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF0B6381B3D78C600C068B6 /* RegisterPracticeLanguageViewController.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		C5D37FE91B39A67D00487807 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C5D37FCB1B39A67D00487807 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C5D37FD21B39A67D00487807;
-			remoteInfo = Tutor;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		1A50665D2D9603E21E779305 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -58,7 +47,6 @@
 		C5D37FDD1B39A67D00487807 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C5D37FDF1B39A67D00487807 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C5D37FE21B39A67D00487807 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		C5D37FE81B39A67D00487807 /* TutorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TutorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5D37FED1B39A67D00487807 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C5D37FEE1B39A67D00487807 /* TutorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorTests.swift; sourceTree = "<group>"; };
 		EBF0B6381B3D78C600C068B6 /* RegisterPracticeLanguageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterPracticeLanguageViewController.swift; sourceTree = "<group>"; };
@@ -71,13 +59,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3CDC0101F8CB29AA9ED1BCD5 /* libPods.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C5D37FE51B39A67D00487807 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,7 +131,6 @@
 			isa = PBXGroup;
 			children = (
 				C5D37FD31B39A67D00487807 /* Tutor.app */,
-				C5D37FE81B39A67D00487807 /* TutorTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -225,24 +205,6 @@
 			productReference = C5D37FD31B39A67D00487807 /* Tutor.app */;
 			productType = "com.apple.product-type.application";
 		};
-		C5D37FE71B39A67D00487807 /* TutorTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C5D37FF51B39A67D00487807 /* Build configuration list for PBXNativeTarget "TutorTests" */;
-			buildPhases = (
-				C5D37FE41B39A67D00487807 /* Sources */,
-				C5D37FE51B39A67D00487807 /* Frameworks */,
-				C5D37FE61B39A67D00487807 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				C5D37FEA1B39A67D00487807 /* PBXTargetDependency */,
-			);
-			name = TutorTests;
-			productName = TutorTests;
-			productReference = C5D37FE81B39A67D00487807 /* TutorTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -255,10 +217,7 @@
 				TargetAttributes = {
 					C5D37FD21B39A67D00487807 = {
 						CreatedOnToolsVersion = 6.3.2;
-					};
-					C5D37FE71B39A67D00487807 = {
-						CreatedOnToolsVersion = 6.3.2;
-						TestTargetID = C5D37FD21B39A67D00487807;
+						DevelopmentTeam = K2WF68895R;
 					};
 				};
 			};
@@ -276,7 +235,6 @@
 			projectRoot = "";
 			targets = (
 				C5D37FD21B39A67D00487807 /* Tutor */,
-				C5D37FE71B39A67D00487807 /* TutorTests */,
 			);
 		};
 /* End PBXProject section */
@@ -291,13 +249,6 @@
 				C5D37FE01B39A67D00487807 /* Images.xcassets in Resources */,
 				C3D67AFF1B3C6CF30036EBF8 /* Initial.storyboard in Resources */,
 				C38EB4391B3B13E7006242C4 /* AdmiralCAT.ttf in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C5D37FE61B39A67D00487807 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,23 +306,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C5D37FE41B39A67D00487807 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C5D37FEF1B39A67D00487807 /* TutorTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		C5D37FEA1B39A67D00487807 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = C5D37FD21B39A67D00487807 /* Tutor */;
-			targetProxy = C5D37FE91B39A67D00487807 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		C5D37FDC1B39A67D00487807 /* Main.storyboard */ = {
@@ -481,6 +416,7 @@
 			baseConfigurationReference = 87766B01811F6F24C3FFAEA1 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Tutor/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -494,45 +430,12 @@
 			baseConfigurationReference = 1A50665D2D9603E21E779305 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Tutor/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Tutor/Bridge-Header.h";
-			};
-			name = Release;
-		};
-		C5D37FF61B39A67D00487807 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = TutorTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tutor.app/Tutor";
-			};
-			name = Debug;
-		};
-		C5D37FF71B39A67D00487807 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = TutorTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tutor.app/Tutor";
 			};
 			name = Release;
 		};
@@ -553,15 +456,6 @@
 			buildConfigurations = (
 				C5D37FF31B39A67D00487807 /* Debug */,
 				C5D37FF41B39A67D00487807 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C5D37FF51B39A67D00487807 /* Build configuration list for PBXNativeTarget "TutorTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C5D37FF61B39A67D00487807 /* Debug */,
-				C5D37FF71B39A67D00487807 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
