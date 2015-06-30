@@ -15,8 +15,6 @@ class PopUpChangeCurrentLanguageViewController: UIViewController, UITableViewDel
     
     @IBOutlet weak var tableViewLanguages: UITableView!
     
-    var selectedLanguage : PFObject?
-    var selectedLanguageRow : Int = -1;
     
     var languages : NSArray?
     
@@ -110,11 +108,6 @@ class PopUpChangeCurrentLanguageViewController: UIViewController, UITableViewDel
             bodyView.layer.cornerRadius = 4
             bodyView.layer.masksToBounds = true
             
-            if(indexPath.row == self.selectedLanguage){
-                bodyView.backgroundColor = UIColor(red: 64/255, green: 148/255, blue: 74/255, alpha: 0.5)
-            }else{
-                bodyView.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.5)
-            }
         }
         
         return cell
@@ -134,32 +127,12 @@ class PopUpChangeCurrentLanguageViewController: UIViewController, UITableViewDel
         {
             let cell = self.tableViewLanguages.cellForRowAtIndexPath(indexPath)
             
-            self.selectedLanguage = languages[indexPath.row] as? PFObject
-            self.selectedLanguageRow = indexPath.row
-            self.tableViewLanguages.reloadData()
+            User.user.currentLang = languages[indexPath.row] as? PFObject
+            self.close()
         }
     }
     
     func tableView(tableView: UITableView, shouldHighlightRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         return true
     }
-//    
-//    func tableView(tableView: UITableView, didHighlightRowAtIndexPath indexPath: NSIndexPath) {
-//        var cell = tableView.cellForRowAtIndexPath(indexPath)
-//        if let cell = cell
-//        {
-//            cell.contentView.backgroundColor = UIColor.clearColor()
-//            cell.backgroundColor = UIColor.clearColor()
-//        }
-//    }
-//    
-//    func tableView(tableView: UITableView, didUnhighlightRowAtIndexPath indexPath: NSIndexPath) {
-//        var cell = tableView.cellForRowAtIndexPath(indexPath)
-//        if let cell = cell
-//        {
-//            cell.contentView.backgroundColor = UIColor.clearColor()
-//            cell.backgroundColor = UIColor.clearColor()
-//        }
-//    }
-
 }

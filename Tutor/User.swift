@@ -21,7 +21,7 @@ class User: NSObject {
     var photo : NSData?
     
     var nativeLang : PFObject?
-    var currentLang : PFObject?
+    dynamic var currentLang : PFObject?
     
     func getNativeLanguage(response: (PFObject?) -> ())
     {

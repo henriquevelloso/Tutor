@@ -30,8 +30,14 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         lView.layer.cornerRadius = lView.frame.size.height / 2
     }
     
+    deinit{
+        User.user.removeObserver(self, forKeyPath: "currentLang")
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        User.user.addObserver(self, forKeyPath: "currentLang", options: NSKeyValueObservingOptions.New, context: nil)
         
         // Load Layout
         radius(self.imgUserProfile)
@@ -66,6 +72,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
             }
         }
         
+        
         self.tableRecentCalls.delegate = self
         self.tableRecentCalls.dataSource = self
         
@@ -77,6 +84,20 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         // Dispose of any resources that can be recreated.
     }
     
+    override func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject, change: [NSObject : AnyObject], context: UnsafeMutablePointer<Void>) {
+        if (keyPath == "currentLang")
+        {
+            User.user.getCurrentLanguage { (language) -> () in
+                if let currentLang = language
+                {
+                    if let name = currentLang.objectForKey("Name") as? String
+                    {
+                        self.btLanguage.setTitle("Praticando \(name)", forState: UIControlState.Normal)
+                    }
+                }
+            }
+        }
+    }
     
     // Delegates + DataSources
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
