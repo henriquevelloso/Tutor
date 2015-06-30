@@ -1,29 +1,44 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="6724" systemVersion="14A389" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="7706" systemVersion="15A178w" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6711"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3735"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="7701"/>
     </dependencies>
     <scenes>
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModuleProvider="target"/>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Tutor_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <imageView width="125" height="125" alignment="center" verticalAlignment="center" image="icon-logo" contentMode="scaleAspectFit" id="LKd-YA-rKt"/>
+                    </items>
+                </controller>
             </objects>
             <point key="canvasLocation" x="235" y="347"/>
         </scene>
         <!--Glance Interface Controller-->
         <scene sceneID="BOz-TT-tkC">
             <objects>
-                <glanceController spacing="0.0" id="0uZ-2p-rRc" customClass="GlanceController" customModuleProvider="target">
+                <glanceController spacing="0.0" id="0uZ-2p-rRc" customClass="GlanceController" customModule="Tutor_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <group alignment="left" id="t8f-Gd-c4y"/>
-                        <group alignment="left" id="uCw-4Q-Ouw"/>
+                        <group alignment="left" backgroundImage="icon-logo-2" contentMode="scaleAspectFit" id="t8f-Gd-c4y"/>
+                        <group alignment="left" layout="vertical" id="uCw-4Q-Ouw">
+                            <items>
+                                <label alignment="center" verticalAlignment="center" text="Último idioma praticado" textAlignment="center" numberOfLines="0" id="eTc-Dz-cs5"/>
+                                <group width="59" height="60" alignment="center" verticalAlignment="center" backgroundImage="icon-language" contentMode="scaleAspectFit" id="ZKp-g6-yZZ">
+                                    <items>
+                                        <label alignment="center" verticalAlignment="center" text="PT" id="8EK-sB-6ln">
+                                            <color key="textColor" red="0.37780145202020199" green="0.37780145202020199" blue="0.37780145202020199" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </items>
+                                </group>
+                            </items>
+                        </group>
                     </items>
                     <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="14"/>
                 </glanceController>
             </objects>
-            <point key="canvasLocation" x="235" y="672"/>
+            <point key="canvasLocation" x="235" y="670"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
@@ -41,10 +56,43 @@
             </objects>
             <point key="canvasLocation" x="235" y="1001"/>
         </scene>
+        <!--Interface Controller-->
+        <scene sceneID="H3V-bc-y2A">
+            <objects>
+                <controller id="Z5A-aE-j7B">
+                    <items>
+                        <imageView width="83" height="26" alignment="center" image="icon-logo-2" contentMode="scaleAspectFit" id="Ago-ka-AZc"/>
+                        <table alignment="center" id="rr4-Rx-qsI">
+                            <items>
+                                <tableRow id="oYn-jY-jNB">
+                                    <group key="rootItem" width="1" height="51.5" alignment="left" id="TkT-M3-2hJ">
+                                        <items>
+                                            <imageView width="22" height="22" alignment="left" verticalAlignment="center" image="icon-user" contentMode="scaleAspectFit" id="vAW-dA-wgW"/>
+                                            <group width="81" height="50" alignment="left" layout="vertical" id="pG2-IZ-rX7">
+                                                <items>
+                                                    <label alignment="left" verticalAlignment="center" text="Nome" id="bR2-i8-r8G">
+                                                        <color key="textColor" red="0.72496448863636365" green="0.72496448863636365" blue="0.72496448863636365" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <fontDescription key="font" type="system" pointSize="16"/>
+                                                    </label>
+                                                    <label alignment="left" verticalAlignment="center" text="Mins" id="Mq5-WD-kcA">
+                                                        <fontDescription key="font" type="system" pointSize="13"/>
+                                                    </label>
+                                                </items>
+                                            </group>
+                                        </items>
+                                    </group>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="448" y="347"/>
+        </scene>
         <!--Notification Controller-->
         <scene sceneID="KIl-fV-djm">
             <objects>
-                <controller id="gdX-wl-uQE" customClass="NotificationController" customModuleProvider="target"/>
+                <controller id="gdX-wl-uQE" customClass="NotificationController" customModule="Tutor_WatchKit_App" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="553" y="1001"/>
         </scene>
