@@ -59,13 +59,17 @@ class EditProfileViewController: UIViewController, UITableViewDelegate, UITableV
         })
         
         var query = PFQuery(className: "CallHistory")
+        query.includeKey("PracticeLanguage")
+        
         query.whereKey("MadeCall", equalTo: PFUser.currentUser()!)
         query.findObjectsInBackgroundWithBlock{
             (objects, error) -> Void in
             if error == nil{
                 if let objects = objects as? [PFObject]{
                     for object in objects {
-                        self.practiceLangugeSet.insert(object["PracticeLanguage"] as! PFObject)
+                        let practice = object["PracticeLanguage"] as! PFObject
+                        println(practice.objectForKey("Name"))
+                        //self.practiceLangugeSet.insert()
                     }
                 }
                 print(self.practiceLangugeSet.description)
