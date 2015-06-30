@@ -13,14 +13,18 @@ class EditProfileViewController: UIViewController, UITableViewDelegate, UITableV
     var languages : NSArray?
     
     @IBOutlet weak var tableViewPracticedLanguages: UITableView!
-    @IBOutlet weak var nameProfile: UILabel!
-    @IBOutlet weak var genderProfile: UILabel!
-    @IBOutlet weak var emailProfile: UILabel!
-    @IBOutlet weak var nativeLanguageProfie: UILabel!
     
     @IBOutlet weak var imageProfile: UIImageView!
     
     var practiceLangugeSet = Set<String>()
+    
+    let user = User()
+    var cont = NSInteger()
+    
+    var dataUser = NSMutableArray()
+    var dataUserImage = NSMutableArray()
+    
+    var native2: String = ""
     
     let radius : (UIView) -> () = { lView in
         lView.layer.masksToBounds = true
@@ -37,19 +41,20 @@ class EditProfileViewController: UIViewController, UITableViewDelegate, UITableV
         self.imageProfile.layer.borderColor = UIColor.whiteColor().CGColor
         self.imageProfile.layer.borderWidth = 3
         
-        let user = User()
+        self.dataUser = NSMutableArray()
+        self.dataUser = NSMutableArray()
+        
         let object = PFUser.currentUser()
         user.loadData(object!)
-        
-        self.nameProfile.text = user.name
-        self.genderProfile.text = user.gender
-        self.emailProfile.text = user.email
         
         user.getNativeLanguage{(native) -> () in
             let name = native?.objectForKey("Name") as? String
             
-            self.nativeLanguageProfie.text = "Native in " + name!
+            self.native2 = "Native in " + name!
+            
         }
+        
+        self.dataUserImage = ["NameFilled-100", "GenderFilled-100", "MessageFilled-100", "TalkFilled-100"]
         
         user.getPhoto({ (photoData, error) -> () in
             if error == nil
@@ -91,20 +96,35 @@ class EditProfileViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.practiceLangugeSet.count
+        return self.practiceLangugeSet.count + 4
     }
     
+    //URGENTE
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
-        
-        let cell = tableView.dequeueReusableCellWithIdentifier("simpleDetail", forIndexPath: indexPath) as! UITableViewCell
-        
+        self.dataUser = [self.user.name!, self.user.gender!, self.user.email!, self.native2]
+        var cell = tableView.dequeueReusableCellWithIdentifier("simpleDetail", forIndexPath: indexPath) as! UITableViewCell
+
+        let imageName = cell.viewWithTag(3) as! UIImageView
         let labelName = cell.viewWithTag(2) as! UILabel
         let labelAcronym = cell.viewWithTag(1) as! UILabel
         
-        let pf = self.practiceLangugeSet[advance(self.practiceLangugeSet.startIndex, indexPath.row)]
+        if(indexPath.row >= 0 && indexPath.row <= 3)
+        {
+            labelAcronym.hidden = true
+            labelName.text = self.dataUser[indexPath.row] as? String
+            var i = self.dataUserImage[indexPath.row] as? String
+            imageName.image = UIImage(named: i!)
+            
+        }
+        else
+        {
+            cont++
+            imageName.hidden = true
+            let pf = self.practiceLangugeSet[advance(self.practiceLangugeSet.startIndex, cont++)]
+            println(pf)
+            labelName.text = pf
+        }
 
-        labelName.text = pf
-        
         return cell
     }
 }

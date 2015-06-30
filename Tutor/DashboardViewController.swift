@@ -198,7 +198,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     @IBAction func btChangeLanguageTouchUpInsideAction(sender: UIButton) {
-        self.popup = UIStoryboard(name: "Initial", bundle: nil).instantiateViewControllerWithIdentifier("vcPopUpChangeCurrentLanguage") as! UIViewController
+        self.popup = UIStoryboard(name: "Initial", bundle: nil).instantiateViewControllerWithIdentifier("vcPopUpChangeCurrentLanguage") as? UIViewController
         
         if let popup = self.popup as? PopUpChangeCurrentLanguageViewController
         {
