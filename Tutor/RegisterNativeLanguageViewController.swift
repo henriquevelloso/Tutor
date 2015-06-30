@@ -82,14 +82,12 @@ class RegisterNativeLanguageViewController: UIViewController, UITableViewDelegat
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        
         if let languages = self.languages{
             let cell = self.tableViewLanguage.cellForRowAtIndexPath(indexPath)
             
             self.languageNative = languages[indexPath.row] as? PFObject
             self.languageNativeRow = indexPath.row
             self.tableViewLanguage.reloadData()
-            
         }
     }
     

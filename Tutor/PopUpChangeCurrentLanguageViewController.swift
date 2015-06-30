@@ -58,18 +58,18 @@ class PopUpChangeCurrentLanguageViewController: UIViewController, UITableViewDel
         
         viewController.view.addSubview(self.view)
         
-        UIView.animateWithDuration(0.3, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
+        UIView.animateWithDuration(0.3, delay: 0, options: UIViewAnimationOptions.CurveEaseOut, animations: { () -> Void in
             
             self.view.alpha = 1
             self.contentView.transform = CGAffineTransformMakeScale(1.1, 1.1)
             
         }) { (successed) -> Void in
-            UIView.animateWithDuration(0.1, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
+            UIView.animateWithDuration(0.1, delay: 0, options: UIViewAnimationOptions.CurveEaseOut, animations: { () -> Void in
                 
                 self.contentView.transform = CGAffineTransformMakeScale(1.0, 1.0)
                 
             }) { (successed) -> Void in
-                    
+                
             }
         }
     }
@@ -92,6 +92,11 @@ class PopUpChangeCurrentLanguageViewController: UIViewController, UITableViewDel
     // DataSource + Delegate
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell : UITableViewCell = self.tableViewLanguages.dequeueReusableCellWithIdentifier("cellLanguage") as! UITableViewCell
+        //cell.selectionStyle = UITableViewCellSelectionStyle.None
+        
+        let selectedView = UIView(frame: cell.frame)
+        selectedView.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.4)
+        cell.selectedBackgroundView = selectedView
         
         if let languages = self.languages{
             let label = cell.viewWithTag(1) as! UILabel
@@ -134,5 +139,27 @@ class PopUpChangeCurrentLanguageViewController: UIViewController, UITableViewDel
             self.tableViewLanguages.reloadData()
         }
     }
+    
+    func tableView(tableView: UITableView, shouldHighlightRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+//    
+//    func tableView(tableView: UITableView, didHighlightRowAtIndexPath indexPath: NSIndexPath) {
+//        var cell = tableView.cellForRowAtIndexPath(indexPath)
+//        if let cell = cell
+//        {
+//            cell.contentView.backgroundColor = UIColor.clearColor()
+//            cell.backgroundColor = UIColor.clearColor()
+//        }
+//    }
+//    
+//    func tableView(tableView: UITableView, didUnhighlightRowAtIndexPath indexPath: NSIndexPath) {
+//        var cell = tableView.cellForRowAtIndexPath(indexPath)
+//        if let cell = cell
+//        {
+//            cell.contentView.backgroundColor = UIColor.clearColor()
+//            cell.backgroundColor = UIColor.clearColor()
+//        }
+//    }
 
 }

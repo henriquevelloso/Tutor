@@ -7,7 +7,7 @@
 //
 
 import UIKit
- 
+
 
 class LoginViewController: UIViewController {
     @IBOutlet weak var constraintIconPos: NSLayoutConstraint!
@@ -164,8 +164,13 @@ class LoginViewController: UIViewController {
                     // USER LOGIN
                     User.user.loadData(user)
                     undoActivityIndicatorView();
-                    self.performSegueWithIdentifier("segueLoginToWelcome", sender: nil)
-                    //self.presentViewController(UIStoryboard(name: "Initial", bundle: nil).instantiateInitialViewController() as! UIViewController, animated: true, completion: nil)
+                    if (user.objectForKey("NativeLanguage") != nil && user.objectForKey("PracticeLanguage") != nil)
+                    {
+                        self.presentViewController(UIStoryboard(name: "Initial", bundle: nil).instantiateInitialViewController() as! UIViewController, animated: true, completion: nil)
+                    }else{
+                        
+                        self.performSegueWithIdentifier("segueLoginToWelcome", sender: nil)
+                    }
                 }
             } else {
                 println("Uh oh. The user cancelled the Facebook login.")

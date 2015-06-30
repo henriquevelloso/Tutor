@@ -203,7 +203,6 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
                 
                 if (counter++ > 0)
                 {
-                    println(queryResult)
                     self.recentCalls = queryResult
                     self.tableRecentCalls.reloadData()
                 }
