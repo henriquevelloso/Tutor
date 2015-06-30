@@ -46,6 +46,7 @@ class User: NSObject {
             }
         }
     }
+    
     func getCurrentLanguage(response: (PFObject?) -> ())
     {
         if let current = currentLang
