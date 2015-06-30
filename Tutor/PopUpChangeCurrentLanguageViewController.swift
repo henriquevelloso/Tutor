@@ -107,7 +107,6 @@ class PopUpChangeCurrentLanguageViewController: UIViewController, UITableViewDel
             
             bodyView.layer.cornerRadius = 4
             bodyView.layer.masksToBounds = true
-            
         }
         
         return cell

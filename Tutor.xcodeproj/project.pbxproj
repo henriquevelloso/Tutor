@@ -14,6 +14,14 @@
 		C3587A131B3C5CE000AD0D0F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3587A121B3C5CE000AD0D0F /* User.swift */; };
 		C38EB4391B3B13E7006242C4 /* AdmiralCAT.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C38EB4381B3B1394006242C4 /* AdmiralCAT.ttf */; };
 		C38EB43E1B3B226D006242C4 /* RegisterWelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38EB43D1B3B226D006242C4 /* RegisterWelcomeViewController.swift */; };
+		C39B6C261B42C7670049287A /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39B6C251B42C7670049287A /* InterfaceController.swift */; };
+		C39B6C281B42C7670049287A /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39B6C271B42C7670049287A /* NotificationController.swift */; };
+		C39B6C2A1B42C7670049287A /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39B6C291B42C7670049287A /* GlanceController.swift */; };
+		C39B6C2C1B42C7670049287A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C39B6C2B1B42C7670049287A /* Images.xcassets */; };
+		C39B6C301B42C7670049287A /* Tutor WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = C39B6C2F1B42C7670049287A /* Tutor WatchKit App.app */; };
+		C39B6C381B42C7670049287A /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C39B6C361B42C7670049287A /* Interface.storyboard */; };
+		C39B6C3A1B42C7670049287A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C39B6C391B42C7670049287A /* Images.xcassets */; };
+		C39B6C3D1B42C7670049287A /* Tutor WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C39B6C201B42C7670049287A /* Tutor WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C3BF1F841B3DAE8500379F88 /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF0B63A1B3D7A2E00C068B6 /* Singleton.swift */; };
 		C3D67AFF1B3C6CF30036EBF8 /* Initial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3D67AFE1B3C6CF30036EBF8 /* Initial.storyboard */; };
 		C3D67B011B3C6F120036EBF8 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D67B001B3C6F120036EBF8 /* DashboardViewController.swift */; };
@@ -26,6 +34,37 @@
 		EBF0B6391B3D78C600C068B6 /* RegisterPracticeLanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF0B6381B3D78C600C068B6 /* RegisterPracticeLanguageViewController.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		C39B6C311B42C7670049287A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C5D37FCB1B39A67D00487807 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C39B6C2E1B42C7670049287A;
+			remoteInfo = "Tutor WatchKit App";
+		};
+		C39B6C3B1B42C7670049287A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C5D37FCB1B39A67D00487807 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C39B6C1F1B42C7670049287A;
+			remoteInfo = "Tutor WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C39B6C441B42C7670049287A /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				C39B6C3D1B42C7670049287A /* Tutor WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		1A50665D2D9603E21E779305 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		5557560F9801DEAAE8E1D9DB /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -36,6 +75,17 @@
 		C3587A121B3C5CE000AD0D0F /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C38EB4381B3B1394006242C4 /* AdmiralCAT.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AdmiralCAT.ttf; sourceTree = "<group>"; };
 		C38EB43D1B3B226D006242C4 /* RegisterWelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterWelcomeViewController.swift; sourceTree = "<group>"; };
+		C39B6C201B42C7670049287A /* Tutor WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Tutor WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C39B6C231B42C7670049287A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C39B6C241B42C7670049287A /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		C39B6C251B42C7670049287A /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		C39B6C271B42C7670049287A /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		C39B6C291B42C7670049287A /* GlanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlanceController.swift; sourceTree = "<group>"; };
+		C39B6C2B1B42C7670049287A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		C39B6C2F1B42C7670049287A /* Tutor WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tutor WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C39B6C351B42C7670049287A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C39B6C371B42C7670049287A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		C39B6C391B42C7670049287A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C3D67AFE1B3C6CF30036EBF8 /* Initial.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Initial.storyboard; sourceTree = "<group>"; };
 		C3D67B001B3C6F120036EBF8 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		C3E1980E1B3D872B003D1F77 /* CallHistory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallHistory.swift; sourceTree = "<group>"; };
@@ -54,6 +104,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		C39B6C1D1B42C7670049287A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C5D37FD01B39A67D00487807 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -106,6 +163,45 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
+		C39B6C211B42C7670049287A /* Tutor WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				C39B6C251B42C7670049287A /* InterfaceController.swift */,
+				C39B6C271B42C7670049287A /* NotificationController.swift */,
+				C39B6C291B42C7670049287A /* GlanceController.swift */,
+				C39B6C2B1B42C7670049287A /* Images.xcassets */,
+				C39B6C221B42C7670049287A /* Supporting Files */,
+			);
+			path = "Tutor WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		C39B6C221B42C7670049287A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C39B6C231B42C7670049287A /* Info.plist */,
+				C39B6C241B42C7670049287A /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C39B6C331B42C7670049287A /* Tutor WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				C39B6C361B42C7670049287A /* Interface.storyboard */,
+				C39B6C391B42C7670049287A /* Images.xcassets */,
+				C39B6C341B42C7670049287A /* Supporting Files */,
+			);
+			path = "Tutor WatchKit App";
+			sourceTree = "<group>";
+		};
+		C39B6C341B42C7670049287A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C39B6C351B42C7670049287A /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		C3BF1F851B3DB94600379F88 /* Register */ = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +217,8 @@
 			children = (
 				C5D37FD51B39A67D00487807 /* Tutor */,
 				C5D37FEB1B39A67D00487807 /* TutorTests */,
+				C39B6C211B42C7670049287A /* Tutor WatchKit Extension */,
+				C39B6C331B42C7670049287A /* Tutor WatchKit App */,
 				C5D37FD41B39A67D00487807 /* Products */,
 				62FA221679C8488DECC71A12 /* Pods */,
 				ED8739C246AE6B5812541542 /* Frameworks */,
@@ -131,6 +229,8 @@
 			isa = PBXGroup;
 			children = (
 				C5D37FD31B39A67D00487807 /* Tutor.app */,
+				C39B6C201B42C7670049287A /* Tutor WatchKit Extension.appex */,
+				C39B6C2F1B42C7670049287A /* Tutor WatchKit App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -186,6 +286,39 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		C39B6C1F1B42C7670049287A /* Tutor WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C39B6C411B42C7670049287A /* Build configuration list for PBXNativeTarget "Tutor WatchKit Extension" */;
+			buildPhases = (
+				C39B6C1C1B42C7670049287A /* Sources */,
+				C39B6C1D1B42C7670049287A /* Frameworks */,
+				C39B6C1E1B42C7670049287A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C39B6C321B42C7670049287A /* PBXTargetDependency */,
+			);
+			name = "Tutor WatchKit Extension";
+			productName = "Tutor WatchKit Extension";
+			productReference = C39B6C201B42C7670049287A /* Tutor WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit-extension";
+		};
+		C39B6C2E1B42C7670049287A /* Tutor WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C39B6C3E1B42C7670049287A /* Build configuration list for PBXNativeTarget "Tutor WatchKit App" */;
+			buildPhases = (
+				C39B6C2D1B42C7670049287A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Tutor WatchKit App";
+			productName = "Tutor WatchKit App";
+			productReference = C39B6C2F1B42C7670049287A /* Tutor WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp";
+		};
 		C5D37FD21B39A67D00487807 /* Tutor */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C5D37FF21B39A67D00487807 /* Build configuration list for PBXNativeTarget "Tutor" */;
@@ -195,10 +328,12 @@
 				C5D37FD01B39A67D00487807 /* Frameworks */,
 				C5D37FD11B39A67D00487807 /* Resources */,
 				9B2B6DA7691B28FA51C87859 /* Copy Pods Resources */,
+				C39B6C441B42C7670049287A /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				C39B6C3C1B42C7670049287A /* PBXTargetDependency */,
 			);
 			name = Tutor;
 			productName = Tutor;
@@ -215,6 +350,13 @@
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = BEPiD;
 				TargetAttributes = {
+					C39B6C1F1B42C7670049287A = {
+						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = 67BQ8QZEWD;
+					};
+					C39B6C2E1B42C7670049287A = {
+						CreatedOnToolsVersion = 6.3.2;
+					};
 					C5D37FD21B39A67D00487807 = {
 						CreatedOnToolsVersion = 6.3.2;
 						DevelopmentTeam = 67BQ8QZEWD;
@@ -235,11 +377,31 @@
 			projectRoot = "";
 			targets = (
 				C5D37FD21B39A67D00487807 /* Tutor */,
+				C39B6C1F1B42C7670049287A /* Tutor WatchKit Extension */,
+				C39B6C2E1B42C7670049287A /* Tutor WatchKit App */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		C39B6C1E1B42C7670049287A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C39B6C2C1B42C7670049287A /* Images.xcassets in Resources */,
+				C39B6C301B42C7670049287A /* Tutor WatchKit App.app in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C39B6C2D1B42C7670049287A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C39B6C381B42C7670049287A /* Interface.storyboard in Resources */,
+				C39B6C3A1B42C7670049287A /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C5D37FD11B39A67D00487807 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -288,6 +450,16 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		C39B6C1C1B42C7670049287A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C39B6C281B42C7670049287A /* NotificationController.swift in Sources */,
+				C39B6C261B42C7670049287A /* InterfaceController.swift in Sources */,
+				C39B6C2A1B42C7670049287A /* GlanceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C5D37FCF1B39A67D00487807 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -308,7 +480,28 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		C39B6C321B42C7670049287A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C39B6C2E1B42C7670049287A /* Tutor WatchKit App */;
+			targetProxy = C39B6C311B42C7670049287A /* PBXContainerItemProxy */;
+		};
+		C39B6C3C1B42C7670049287A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C39B6C1F1B42C7670049287A /* Tutor WatchKit Extension */;
+			targetProxy = C39B6C3B1B42C7670049287A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		C39B6C361B42C7670049287A /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C39B6C371B42C7670049287A /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
 		C5D37FDC1B39A67D00487807 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -328,6 +521,64 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		C39B6C3F1B42C7670049287A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IBSC_MODULE = Tutor_WatchKit_Extension;
+				INFOPLIST_FILE = "Tutor WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Debug;
+		};
+		C39B6C401B42C7670049287A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				IBSC_MODULE = Tutor_WatchKit_Extension;
+				INFOPLIST_FILE = "Tutor WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Release;
+		};
+		C39B6C421B42C7670049287A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Tutor WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		C39B6C431B42C7670049287A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "Tutor WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		C5D37FF01B39A67D00487807 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -442,6 +693,22 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		C39B6C3E1B42C7670049287A /* Build configuration list for PBXNativeTarget "Tutor WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C39B6C3F1B42C7670049287A /* Debug */,
+				C39B6C401B42C7670049287A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C39B6C411B42C7670049287A /* Build configuration list for PBXNativeTarget "Tutor WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C39B6C421B42C7670049287A /* Debug */,
+				C39B6C431B42C7670049287A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		C5D37FCE1B39A67D00487807 /* Build configuration list for PBXProject "Tutor" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
