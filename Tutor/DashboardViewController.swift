@@ -167,10 +167,15 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     
     
     // Actions
-    @IBAction func btConfigTouchUpInsideAction(sender: AnyObject) {
-        PFUser.logOut()
-        self.presentViewController(UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as! UIViewController, animated: true, completion: nil)
+    //@IBAction func btConfigTouchUpInsideAction(sender: AnyObject) {
+        //PFUser.logOut()
+        //self.presentViewController(UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as! UIViewController, animated: true, completion: nil)
+    //}
+    
+    @IBAction func editProfile(sender: UIButton) {
+        self.performSegueWithIdentifier("EditProfile", sender: nil)
     }
+    
     @IBAction func btChangeLanguageTouchUpInsideAction(sender: UIButton) {
         self.popup = UIStoryboard(name: "Initial", bundle: nil).instantiateViewControllerWithIdentifier("vcPopUpChangeCurrentLanguage") as! UIViewController
         
