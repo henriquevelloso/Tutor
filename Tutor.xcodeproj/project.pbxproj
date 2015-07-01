@@ -358,14 +358,15 @@
 				TargetAttributes = {
 					C39B6C1F1B42C7670049287A = {
 						CreatedOnToolsVersion = 6.3.2;
-						DevelopmentTeam = 67BQ8QZEWD;
+						DevelopmentTeam = K2WF68895R;
 					};
 					C39B6C2E1B42C7670049287A = {
 						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = K2WF68895R;
 					};
 					C5D37FD21B39A67D00487807 = {
 						CreatedOnToolsVersion = 6.3.2;
-						DevelopmentTeam = 67BQ8QZEWD;
+						DevelopmentTeam = K2WF68895R;
 					};
 				};
 			};
@@ -533,6 +534,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -551,6 +553,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				IBSC_MODULE = Tutor_WatchKit_Extension;
 				INFOPLIST_FILE = "Tutor WatchKit App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;

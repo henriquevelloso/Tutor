@@ -60,7 +60,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
             {
                 if let name = currentLang.objectForKey("Name") as? String
                 {
-                    self.btLanguage.setTitle("Praticando \(name)", forState: UIControlState.Normal)
+                    self.btLanguage.setTitle("Learning \(name)", forState: UIControlState.Normal)
                 }
             }
         }
@@ -205,7 +205,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     @IBAction func btChangeLanguageTouchUpInsideAction(sender: UIButton) {
-        self.popup = UIStoryboard(name: "Initial", bundle: nil).instantiateViewControllerWithIdentifier("vcPopUpChangeCurrentLanguage") as! UIViewController
+        self.popup = UIStoryboard(name: "Initial", bundle: nil).instantiateViewControllerWithIdentifier("vcPopUpChangeCurrentLanguage") as? UIViewController
         
         if let popup = self.popup as? PopUpChangeCurrentLanguageViewController
         {
