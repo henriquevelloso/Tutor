@@ -16,15 +16,15 @@ class EditProfileViewController: UIViewController, UITableViewDelegate, UITableV
     
     @IBOutlet weak var imageProfile: UIImageView!
     
-    var practiceLangugeSet = Set<String>()
+    var practiceLangugeSet = Set<PFObject>()
     
     let user = User()
-    var cont = NSInteger()
     
     var dataUser = NSMutableArray()
     var dataUserImage = NSMutableArray()
     
     var native2: String = ""
+    var cont: NSInteger = 0
     
     let radius : (UIView) -> () = { lView in
         lView.layer.masksToBounds = true
@@ -51,7 +51,7 @@ class EditProfileViewController: UIViewController, UITableViewDelegate, UITableV
             let name = native?.objectForKey("Name") as? String
             
             self.native2 = "Native in " + name!
-            
+            self.tableViewPracticedLanguages.reloadData()
         }
         
         self.dataUserImage = ["NameFilled-100", "GenderFilled-100", "MessageFilled-100", "TalkFilled-100"]
@@ -72,11 +72,11 @@ class EditProfileViewController: UIViewController, UITableViewDelegate, UITableV
                 if let objects = objects as? [PFObject]{
                     for object in objects {
                         let practice = object["PracticeLanguage"] as! PFObject
-                        let s = practice.objectForKey("Name") as! String
-                        self.practiceLangugeSet.insert(s)
+                        //let s = practice.objectForKey("Name") as! String
+                        self.practiceLangugeSet.insert(practice)
                     }
                 }
-                print(self.practiceLangugeSet.description)
+                //print(self.practiceLangugeSet.description)
                 self.tableViewPracticedLanguages.reloadData()
             }
         }
@@ -102,6 +102,7 @@ class EditProfileViewController: UIViewController, UITableViewDelegate, UITableV
     //URGENTE
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         self.dataUser = [self.user.name!, self.user.gender!, self.user.email!, self.native2]
+
         var cell = tableView.dequeueReusableCellWithIdentifier("simpleDetail", forIndexPath: indexPath) as! UITableViewCell
 
         let imageName = cell.viewWithTag(3) as! UIImageView
@@ -111,6 +112,7 @@ class EditProfileViewController: UIViewController, UITableViewDelegate, UITableV
         if(indexPath.row >= 0 && indexPath.row <= 3)
         {
             labelAcronym.hidden = true
+            imageName.hidden = false
             labelName.text = self.dataUser[indexPath.row] as? String
             var i = self.dataUserImage[indexPath.row] as? String
             imageName.image = UIImage(named: i!)
@@ -118,11 +120,21 @@ class EditProfileViewController: UIViewController, UITableViewDelegate, UITableV
         }
         else
         {
-            cont++
-            imageName.hidden = true
-            let pf = self.practiceLangugeSet[advance(self.practiceLangugeSet.startIndex, cont++)]
-            println(pf)
-            labelName.text = pf
+            if(self.practiceLangugeSet.count > 0){
+                labelAcronym.hidden = false
+                imageName.hidden = true
+                //print(cont)
+                let pf = self.practiceLangugeSet[advance(self.practiceLangugeSet.startIndex, cont)]
+                //println(pf)
+                labelName.text = pf["Name"] as? String
+                labelAcronym.text = pf["Acronym"] as? String
+                //print(labelAcronym.text)
+                cont++
+                if(cont > self.practiceLangugeSet.count)
+                {
+                    self.cont = 0
+                }
+            }
         }
 
         return cell
