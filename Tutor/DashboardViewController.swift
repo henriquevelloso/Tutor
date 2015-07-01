@@ -60,7 +60,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
             {
                 if let name = currentLang.objectForKey("Name") as? String
                 {
-                    self.btLanguage.setTitle("Praticando \(name)", forState: UIControlState.Normal)
+                    self.btLanguage.setTitle("Learning \(name)", forState: UIControlState.Normal)
                 }
             }
         }

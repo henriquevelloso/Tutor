@@ -99,7 +99,6 @@ class EditProfileViewController: UIViewController, UITableViewDelegate, UITableV
         return self.practiceLangugeSet.count + 4
     }
     
-    //URGENTE
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         self.dataUser = [self.user.name!, self.user.gender!, self.user.email!, self.native2]
 

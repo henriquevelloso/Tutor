@@ -143,15 +143,15 @@
                                     <constraint firstAttribute="width" secondItem="K8M-cR-kPh" secondAttribute="height" multiplier="1:1" id="YVl-aj-Yyq"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bem-vindo ao" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FPv-YW-LuM">
-                                <rect key="frame" x="216" y="279" width="99" height="19"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FPv-YW-LuM">
+                                <rect key="frame" x="223.5" y="279" width="84.5" height="18.5"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tutor" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Cz-78-mHq">
-                                <rect key="frame" x="319" y="272" width="64" height="32"/>
+                                <rect key="frame" x="312" y="272" width="64" height="32"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="AdmiralCAT" family="Admiral CAT" pointSize="32"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -165,7 +165,7 @@
                                     <constraint firstAttribute="width" constant="180" id="JzI-0D-hqG"/>
                                     <constraint firstAttribute="height" constant="38" id="MPN-32-rLa"/>
                                 </constraints>
-                                <state key="normal" title="Próximo">
+                                <state key="normal" title="Next">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -250,7 +250,7 @@
                                     <constraint firstAttribute="height" constant="38" id="1Vh-8C-c4l"/>
                                     <constraint firstAttribute="width" constant="180" id="Trb-SZ-SXm"/>
                                 </constraints>
-                                <state key="normal" title="Próximo">
+                                <state key="normal" title="Next">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -258,15 +258,8 @@
                                     <action selector="saveParseLanguageNative:" destination="D14-8L-yBr" eventType="touchUpInside" id="Uly-y4-5md"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Qual seu idioma nativo?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Awk-pT-SxM">
-                                <rect key="frame" x="207" y="44" width="185" height="21"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="67" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="b1K-cj-ug9">
-                                <rect key="frame" x="36" y="80" width="528" height="426"/>
+                                <rect key="frame" x="36" y="79" width="528" height="426.5"/>
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" red="0.99832613647759716" green="1" blue="0.99680300317251347" alpha="1" colorSpace="calibratedRGB"/>
@@ -292,14 +285,14 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0d7-UZ-bnx">
-                                                            <rect key="frame" x="22" y="20" width="18" height="17"/>
+                                                            <rect key="frame" x="21" y="20" width="17.5" height="17"/>
                                                             <animations/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q7A-pl-uXv">
-                                                            <rect key="frame" x="66" y="18" width="45" height="22"/>
+                                                            <rect key="frame" x="66" y="18" width="44.5" height="21.5"/>
                                                             <animations/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -335,6 +328,13 @@
                                     <outlet property="delegate" destination="D14-8L-yBr" id="6cR-a2-XXW"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is your native language?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Awk-pT-SxM">
+                                <rect key="frame" x="185" y="45" width="231" height="20.5"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -342,12 +342,12 @@
                             <constraint firstItem="4iz-gd-Hnp" firstAttribute="top" secondItem="iCC-gX-uME" secondAttribute="top" id="1gv-be-x0v"/>
                             <constraint firstAttribute="centerX" secondItem="opB-Kj-arq" secondAttribute="centerX" id="5dE-d6-WvH"/>
                             <constraint firstItem="opB-Kj-arq" firstAttribute="top" secondItem="b1K-cj-ug9" secondAttribute="bottom" constant="20" id="AlF-We-ZpY"/>
-                            <constraint firstItem="Awk-pT-SxM" firstAttribute="top" secondItem="sb0-Dw-rXC" secondAttribute="bottom" constant="24" id="EXh-hF-kun"/>
+                            <constraint firstItem="Awk-pT-SxM" firstAttribute="top" secondItem="sb0-Dw-rXC" secondAttribute="bottom" constant="25" id="EXh-hF-kun"/>
                             <constraint firstItem="35Z-Ha-ZOp" firstAttribute="top" secondItem="opB-Kj-arq" secondAttribute="bottom" constant="22" id="Hne-9L-nyV"/>
                             <constraint firstItem="35Z-Ha-ZOp" firstAttribute="top" secondItem="4iz-gd-Hnp" secondAttribute="bottom" id="MVU-y5-TGY"/>
                             <constraint firstAttribute="centerX" secondItem="Awk-pT-SxM" secondAttribute="centerX" id="OMx-mg-ZJg"/>
                             <constraint firstAttribute="trailing" secondItem="b1K-cj-ug9" secondAttribute="trailing" constant="36" id="QUv-Zk-iHE"/>
-                            <constraint firstItem="b1K-cj-ug9" firstAttribute="top" secondItem="Awk-pT-SxM" secondAttribute="bottom" constant="16" id="QYV-G6-mDM"/>
+                            <constraint firstItem="b1K-cj-ug9" firstAttribute="top" secondItem="Awk-pT-SxM" secondAttribute="bottom" constant="14" id="QYV-G6-mDM"/>
                             <constraint firstItem="b1K-cj-ug9" firstAttribute="leading" secondItem="iCC-gX-uME" secondAttribute="leading" constant="36" id="aMv-zI-kR4"/>
                             <constraint firstItem="4iz-gd-Hnp" firstAttribute="leading" secondItem="iCC-gX-uME" secondAttribute="leading" id="c6D-1e-mtE"/>
                             <constraint firstItem="35Z-Ha-ZOp" firstAttribute="top" secondItem="opB-Kj-arq" secondAttribute="bottom" priority="999" constant="36" id="k81-V7-AEK"/>
@@ -400,7 +400,7 @@
                                     <constraint firstAttribute="height" constant="38" id="NLq-4F-WON"/>
                                     <constraint firstAttribute="width" constant="180" id="Ze6-lP-Yc9"/>
                                 </constraints>
-                                <state key="normal" title="Feito!">
+                                <state key="normal" title="Done!">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -408,15 +408,15 @@
                                     <action selector="saveParseLanguageLearn:" destination="kA7-BJ-a6R" eventType="touchUpInside" id="NGh-qk-fu8"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Qual idioma você quer praticar?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8r9-bs-qMC">
-                                <rect key="frame" x="176" y="44" width="246" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Which language you want to practice?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8r9-bs-qMC">
+                                <rect key="frame" x="152" y="44" width="294" height="20.5"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="66" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="wba-Zy-hI0">
-                                <rect key="frame" x="36" y="85" width="528" height="426"/>
+                                <rect key="frame" x="36" y="84" width="528" height="425.5"/>
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -450,7 +450,7 @@
                                                             </variation>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PT" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q5M-n6-XNQ" userLabel="PT">
-                                                            <rect key="frame" x="19" y="18" width="21" height="21"/>
+                                                            <rect key="frame" x="19" y="18" width="21" height="20.5"/>
                                                             <animations/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -460,7 +460,7 @@
                                                             </variation>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mgD-RX-Xt9">
-                                                            <rect key="frame" x="66" y="18" width="45" height="22"/>
+                                                            <rect key="frame" x="66" y="18" width="44.5" height="21.5"/>
                                                             <animations/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
