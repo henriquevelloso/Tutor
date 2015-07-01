@@ -23,6 +23,8 @@ class EditProfileViewController: UIViewController, UITableViewDelegate, UITableV
     var dataUser = NSMutableArray()
     var dataUserImage = NSMutableArray()
     
+    @IBOutlet weak var logOut: UIButton!
+    
     var native2: String = ""
     var cont: NSInteger = 0
     
@@ -40,6 +42,10 @@ class EditProfileViewController: UIViewController, UITableViewDelegate, UITableV
         
         self.imageProfile.layer.borderColor = UIColor.whiteColor().CGColor
         self.imageProfile.layer.borderWidth = 3
+        
+        self.logOut.layer.masksToBounds = true
+        self.logOut.layer.cornerRadius = self.logOut.frame.size.height / 2
+        self.logOut.backgroundColor = UIColor(red: 193/255, green: 114/255, blue: 114/255, alpha: 1)
         
         self.dataUser = NSMutableArray()
         self.dataUser = NSMutableArray()
