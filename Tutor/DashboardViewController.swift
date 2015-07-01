@@ -199,8 +199,8 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     //}
     
     @IBAction func editProfile(sender: UIButton) {
-        PFUser.logOut()
-        self.presentViewController(UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as! UIViewController, animated: true, completion: nil)
+        //PFUser.logOut()
+        //self.presentViewController(UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as! UIViewController, animated: true, completion: nil)
         //self.performSegueWithIdentifier("EditProfile", sender: nil)
     }
     
@@ -214,7 +214,10 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     
-    
+    @IBAction func unwindProfileSegue(segue : UIStoryboardSegue)
+    {
+        
+    }
     // Functions
     func loadHistory(){
         

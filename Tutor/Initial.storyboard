@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E36b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="aOK-1j-R56">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="15A178w" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="aOK-1j-R56">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -52,6 +52,7 @@
                                 <state key="normal" image="icon-config"/>
                                 <connections>
                                     <action selector="editProfile:" destination="aOK-1j-R56" eventType="touchUpInside" id="28i-Dh-o9E"/>
+                                    <segue destination="3N9-7f-QaZ" kind="showDetail" id="ry7-bT-63I"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Log-cc-kiB">
@@ -201,7 +202,6 @@
                         <outlet property="lblLevel" destination="z00-RZ-CNz" id="DEA-7h-lhB"/>
                         <outlet property="lblName" destination="c5w-RA-cSp" id="3aV-xe-Yvi"/>
                         <outlet property="tableRecentCalls" destination="vWC-ow-d7Z" id="eF5-hu-Ui1"/>
-                        <segue destination="3N9-7f-QaZ" kind="show" identifier="EditProfile" id="a0s-uc-Y1s"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tYL-qq-Y5K" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -253,13 +253,13 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <action selector="BackDashBoard:" destination="3N9-7f-QaZ" eventType="touchUpInside" id="xfK-zn-gTF"/>
+                                    <segue destination="Npm-85-0cy" kind="unwind" unwindAction="unwindProfileSegue:" id="6y4-DB-qob"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="62" sectionHeaderHeight="28" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="BBe-9C-Lkj">
-                                <rect key="frame" x="10" y="151" width="580" height="406"/>
+                                <rect key="frame" x="0.0" y="151" width="600" height="406"/>
                                 <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell tag="20" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="simpleDetail" rowHeight="62" id="LYC-Lf-DlS">
                                         <rect key="frame" x="0.0" y="0.0" width="580" height="44"/>
@@ -267,11 +267,10 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LYC-Lf-DlS" id="3TA-Bd-pza">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back-short-language" translatesAutoresizingMaskIntoConstraints="NO" id="Bo6-3x-4II">
+                                                <imageView userInteractionEnabled="NO" tag="3" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back-short-language" translatesAutoresizingMaskIntoConstraints="NO" id="Bo6-3x-4II">
                                                     <rect key="frame" x="8" y="7" width="48" height="48"/>
                                                     <animations/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="48" id="VtV-h7-Msh"/>
                                                         <constraint firstAttribute="width" secondItem="Bo6-3x-4II" secondAttribute="height" multiplier="1:1" id="kMC-4e-3f6"/>
                                                     </constraints>
                                                 </imageView>
@@ -279,7 +278,7 @@
                                                     <rect key="frame" x="70" y="21.5" width="40" height="19.5"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" red="0.51299878379382058" green="0.51299878379382058" blue="0.51299878379382058" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.58471200980392157" green="0.58471200980392157" blue="0.58471200980392157" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mDo-Kd-WZf">
@@ -294,11 +293,37 @@
                                             <constraints>
                                                 <constraint firstItem="oxB-Sr-Rgl" firstAttribute="leading" secondItem="Bo6-3x-4II" secondAttribute="trailing" constant="14" id="0jt-1r-FpH"/>
                                                 <constraint firstAttribute="centerY" secondItem="oxB-Sr-Rgl" secondAttribute="centerY" id="3ay-CO-nCd"/>
+                                                <constraint firstItem="Bo6-3x-4II" firstAttribute="top" secondItem="3TA-Bd-pza" secondAttribute="top" constant="7" id="620-Bp-Rms"/>
                                                 <constraint firstItem="Bo6-3x-4II" firstAttribute="leading" secondItem="3TA-Bd-pza" secondAttribute="leading" constant="8" id="JO6-MH-6XW"/>
-                                                <constraint firstAttribute="centerY" secondItem="Bo6-3x-4II" secondAttribute="centerY" id="ckl-Q0-uHZ"/>
+                                                <constraint firstAttribute="bottom" secondItem="Bo6-3x-4II" secondAttribute="bottom" constant="7" id="LiV-pW-dS9"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="simpleUserDetail" rowHeight="47" id="LGH-l4-Mwf">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LGH-l4-Mwf" id="9Ld-0U-N7V">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-profile" translatesAutoresizingMaskIntoConstraints="NO" id="gCB-db-L9D">
+                                                    <rect key="frame" x="8" y="4" width="39" height="39"/>
+                                                    <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="39" id="fUr-iq-cqj"/>
+                                                        <constraint firstAttribute="width" secondItem="gCB-db-L9D" secondAttribute="height" multiplier="1:1" id="s2Z-Mh-UxZ"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="centerY" secondItem="gCB-db-L9D" secondAttribute="centerY" id="DtQ-u0-bde"/>
+                                                <constraint firstItem="gCB-db-L9D" firstAttribute="leading" secondItem="9Ld-0U-N7V" secondAttribute="leading" constant="8" id="dBu-xe-G4L"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -308,6 +333,7 @@
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7xS-20-EXW">
                                 <rect key="frame" x="134" y="565" width="313" height="30"/>
+                                <animations/>
                                 <state key="normal" title="Log Out">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -321,10 +347,10 @@
                         <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="sW0-h3-W8l" secondAttribute="centerX" id="1y4-Pp-Q0b"/>
-                            <constraint firstItem="BBe-9C-Lkj" firstAttribute="leading" secondItem="Uds-zc-WOb" secondAttribute="leading" constant="10" id="5OT-tb-Zck"/>
+                            <constraint firstItem="BBe-9C-Lkj" firstAttribute="leading" secondItem="Uds-zc-WOb" secondAttribute="leading" id="5OT-tb-Zck"/>
                             <constraint firstItem="8HR-cl-Jad" firstAttribute="leading" secondItem="Uds-zc-WOb" secondAttribute="leading" constant="22" id="8Jh-ve-mmG"/>
                             <constraint firstAttribute="trailingMargin" secondItem="7xS-20-EXW" secondAttribute="trailing" constant="137" id="96X-f7-wyE"/>
-                            <constraint firstAttribute="trailing" secondItem="BBe-9C-Lkj" secondAttribute="trailing" constant="10" id="F2h-CA-AMl"/>
+                            <constraint firstAttribute="trailing" secondItem="BBe-9C-Lkj" secondAttribute="trailing" id="F2h-CA-AMl"/>
                             <constraint firstItem="BBe-9C-Lkj" firstAttribute="top" secondItem="Yy8-IC-2Nb" secondAttribute="bottom" constant="8" id="HYU-SG-uX0"/>
                             <constraint firstItem="7xS-20-EXW" firstAttribute="top" secondItem="BBe-9C-Lkj" secondAttribute="bottom" constant="8" id="R8M-NH-QaQ"/>
                             <constraint firstItem="qSW-g6-dcJ" firstAttribute="top" secondItem="7xS-20-EXW" secondAttribute="bottom" constant="5" id="Uxm-B4-0FD"/>
@@ -347,10 +373,10 @@
                         <outlet property="imageProfile" destination="sW0-h3-W8l" id="69F-tD-0h7"/>
                         <outlet property="logOut" destination="7xS-20-EXW" id="k0J-4k-JGk"/>
                         <outlet property="tableViewPracticedLanguages" destination="BBe-9C-Lkj" id="cVI-52-1U3"/>
-                        <segue destination="aOK-1j-R56" kind="show" identifier="BackDashBoard" id="FQN-rT-5Lw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xti-RC-lw5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Npm-85-0cy" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1068" y="348"/>
         </scene>
@@ -502,6 +528,7 @@
         <image name="icon-back" width="25" height="40"/>
         <image name="icon-config" width="48" height="36"/>
         <image name="icon-phone-call" width="25" height="25"/>
+        <image name="icon-profile" width="43" height="43"/>
         <image name="icon-user" width="1025" height="1025"/>
     </resources>
 </document>

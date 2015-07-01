@@ -9,7 +9,7 @@
 import UIKit
 
 class EditProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+    
     var languages : NSArray?
     
     @IBOutlet weak var tableViewPracticedLanguages: UITableView!
@@ -35,7 +35,7 @@ class EditProfileViewController: UIViewController, UITableViewDelegate, UITableV
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view
         
         self.tableViewPracticedLanguages.tableHeaderView?.frame = CGRectMake(10, 0, self.tableViewPracticedLanguages.frame.size.width, 57)
@@ -62,7 +62,7 @@ class EditProfileViewController: UIViewController, UITableViewDelegate, UITableV
             self.tableViewPracticedLanguages.reloadData()
         }
         
-        self.dataUserImage = ["NameFilled-100", "GenderFilled-100", "MessageFilled-100", "TalkFilled-100"]
+        self.dataUserImage = ["icon-profile", "icon-gender", "icon-mail", "icon-talk"]
         
         user.getPhoto({ (photoData, error) -> () in
             if error == nil
@@ -89,32 +89,39 @@ class EditProfileViewController: UIViewController, UITableViewDelegate, UITableV
             }
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    @IBAction func BackDashBoard(sender: UIButton) {
-        self.performSegueWithIdentifier("BackDashBoard", sender: nil)
-    }
-    
+
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 2
+    }
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        var height : CGFloat = 20
+        
+        switch(section)
+        {
+        case 1:
+            height = 54
+        default:
+            height = 0
+        }
+        
+        return height
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        if (section == 0) {
-            
+        switch(section)
+        {
+        case 0:
             return 4
-            
-        }
-            
-        else{
-            
+        case 1:
             return self.practiceLangugeSet.count
-            
+        default:
+            return 0
         }
         
     }
@@ -138,20 +145,13 @@ class EditProfileViewController: UIViewController, UITableViewDelegate, UITableV
         
         
         if(indexPath.section == 0)
-            
         {
-            
             labelAcronym.hidden = true
             
             imageName.hidden = false
-            
             labelName.text = self.dataUser[indexPath.row] as? String
-            
             var i = self.dataUserImage[indexPath.row] as? String
-            
             imageName.image = UIImage(named: i!)
-            
-            
             
         }
             
@@ -166,15 +166,10 @@ class EditProfileViewController: UIViewController, UITableViewDelegate, UITableV
             let pf = self.practiceLangugeSet[advance(self.practiceLangugeSet.startIndex, indexPath.row)]
             
             labelName.text = pf["Name"] as? String
-            
             labelAcronym.text = pf["Acronym"] as? String
-            
         }
         
-        
-        
         return cell
-        
     }
     
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -182,30 +177,34 @@ class EditProfileViewController: UIViewController, UITableViewDelegate, UITableV
         var view:UIView = UIView()
         
         if(section == 1){
-            
-            var string = "Practiced Languages"
-            
             view = UIView(frame: CGRectMake(0, 0, tableView.frame.size.width, 57))
             
-            let labelName = UILabel(frame: CGRectMake(0, 0, tableView.frame.size.width, 30))
+            let lblTitle = UILabel(frame: CGRectMake(0, 0, tableView.frame.size.width, 30))
             
-            labelName.text = string
+            lblTitle.text = "Linguagens Praticadas"
             
-            labelName.textColor = UIColor.whiteColor()
-            labelName.textAlignment = .Center
+            lblTitle.textColor = UIColor.whiteColor()
+            lblTitle.textAlignment = .Center
+            lblTitle.center = view.center
             
-            view.addSubview(labelName)
+            view.addSubview(lblTitle)
             
             view.backgroundColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
-  
+            
         }else{
             tableView.tableHeaderView?.frame = CGRectMake(0, 0, tableView.frame.size.width, 0)
         }
         
-        
-        
         return view
         
+    }
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if (indexPath.section == 0)
+        {
+            return 42
+        }else{
+            return 62
+        }
     }
     
     @IBAction func logOut(sender: UIButton) {
