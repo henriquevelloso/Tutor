@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="7706" systemVersion="15A178w" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="7706" systemVersion="15A178w" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Z5A-aE-j7B">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="7701"/>
@@ -36,6 +36,9 @@
                         </group>
                     </items>
                     <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="14"/>
+                    <connections>
+                        <outlet property="lblLang" destination="8EK-sB-6ln" id="Lb2-Su-kVV"/>
+                    </connections>
                 </glanceController>
             </objects>
             <point key="canvasLocation" x="235" y="670"/>
@@ -56,19 +59,19 @@
             </objects>
             <point key="canvasLocation" x="235" y="1001"/>
         </scene>
-        <!--Interface Controller-->
+        <!--Call History Interface Controller-->
         <scene sceneID="H3V-bc-y2A">
             <objects>
-                <controller id="Z5A-aE-j7B">
+                <controller id="Z5A-aE-j7B" customClass="CallHistoryInterfaceController" customModule="Tutor_WatchKit_Extension">
                     <items>
                         <imageView width="83" height="26" alignment="center" image="icon-logo-2" contentMode="scaleAspectFit" id="Ago-ka-AZc"/>
                         <table alignment="center" id="rr4-Rx-qsI">
                             <items>
-                                <tableRow id="oYn-jY-jNB">
+                                <tableRow identifier="cellHistory" id="oYn-jY-jNB" customClass="CallHistoryContentCell" customModule="Tutor_WatchKit_Extension">
                                     <group key="rootItem" width="1" height="51.5" alignment="left" id="TkT-M3-2hJ">
                                         <items>
-                                            <imageView width="22" height="22" alignment="left" verticalAlignment="center" image="icon-user" contentMode="scaleAspectFit" id="vAW-dA-wgW"/>
-                                            <group width="81" height="50" alignment="left" layout="vertical" id="pG2-IZ-rX7">
+                                            <group width="22" height="22" alignment="left" verticalAlignment="center" backgroundImage="icon-user" contentMode="scaleAspectFit" radius="11" id="1Ei-g5-Wp1"/>
+                                            <group width="99" height="50" alignment="left" layout="vertical" id="pG2-IZ-rX7">
                                                 <items>
                                                     <label alignment="left" verticalAlignment="center" text="Nome" id="bR2-i8-r8G">
                                                         <color key="textColor" red="0.72496448863636365" green="0.72496448863636365" blue="0.72496448863636365" alpha="1" colorSpace="calibratedRGB"/>
@@ -81,13 +84,24 @@
                                             </group>
                                         </items>
                                     </group>
+                                    <connections>
+                                        <outlet property="imgUser" destination="1Ei-g5-Wp1" id="RsD-dD-RXI"/>
+                                        <outlet property="lblMin" destination="Mq5-WD-kcA" id="osV-wd-yXO"/>
+                                        <outlet property="lblName" destination="bR2-i8-r8G" id="O9s-Ye-cqU"/>
+                                    </connections>
+                                </tableRow>
+                                <tableRow identifier="cellNoRow" id="Xc4-CH-yGg">
+                                    <group key="rootItem" width="1" alignment="left" id="VhN-sG-se7"/>
                                 </tableRow>
                             </items>
                         </table>
                     </items>
+                    <connections>
+                        <outlet property="tableHistory" destination="rr4-Rx-qsI" id="aFs-hG-jhq"/>
+                    </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="448" y="347"/>
+            <point key="canvasLocation" x="483" y="347"/>
         </scene>
         <!--Notification Controller-->
         <scene sceneID="KIl-fV-djm">

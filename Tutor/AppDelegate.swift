@@ -34,6 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let currentUser = PFUser.currentUser()
         {
             User.user.loadData(currentUser)
+            
             self.window?.rootViewController = UIStoryboard(name: "Initial", bundle: nil).instantiateInitialViewController() as? UIViewController
             self.window?.makeKeyAndVisible()
         }
@@ -61,6 +62,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         FBSDKAppEvents.activateApp()
     
+    }
+    func application(application: UIApplication, handleWatchKitExtensionRequest userInfo: [NSObject : AnyObject]?, reply: (([NSObject : AnyObject]!) -> Void)!) {
+        if let userInfo = userInfo
+        {
+            if let info = userInfo["get"] as? String
+            {
+                if (info == "history")
+                {
+                    reply(["history" : NSUserDefaults.standardUserDefaults().objectForKey("history") as! NSArray])
+                    
+                    return;
+                }else if(info == "language")
+                {
+                    reply(["language" : NSUserDefaults.standardUserDefaults().objectForKey("currentLanguage") as! String])
+                    return;
+                }
+                
+            }
+            
+            reply(nil)
+        }
     }
 
     func applicationWillTerminate(application: UIApplication) {

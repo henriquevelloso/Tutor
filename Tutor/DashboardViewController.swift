@@ -23,7 +23,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     
     var popup : UIViewController?
     
-    var recentCalls : NSArray?
+    var recentCalls : NSMutableArray?
     
     let radius : (UIView) -> () = { lView in
         lView.layer.masksToBounds = true
@@ -94,11 +94,16 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
                     {
                         self.btLanguage.setTitle("Praticando \(name)", forState: UIControlState.Normal)
                     }
+                    if let ac = currentLang.objectForKey("Acronym") as? String
+                    {
+                        NSUserDefaults.standardUserDefaults().setObject(ac, forKey: "currentLanguage")
+                    }
                 }
+                
             }
+            
         }
     }
-    
     // Delegates + DataSources
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
@@ -194,7 +199,9 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     //}
     
     @IBAction func editProfile(sender: UIButton) {
-        self.performSegueWithIdentifier("EditProfile", sender: nil)
+        PFUser.logOut()
+        self.presentViewController(UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as! UIViewController, animated: true, completion: nil)
+        //self.performSegueWithIdentifier("EditProfile", sender: nil)
     }
     
     @IBAction func btChangeLanguageTouchUpInsideAction(sender: UIButton) {
@@ -210,55 +217,17 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     
     // Functions
     func loadHistory(){
-        if let user = User.user.parseUser{
-            
-            var counter : Int = 0
-            var queryResult : NSMutableArray = NSMutableArray()
-            let finalize : ([AnyObject]?) -> ()  = {
-                result in
-                
-                if let result = result{
-                    for history in result
-                    {
-                        if let history = history as? PFObject
-                        {
-                            queryResult.addObject(CallHistory(callHistory: history))
-                        }
-                    }
-                }
-                
-                if (counter++ > 0)
-                {
-                    self.recentCalls = queryResult
-                    self.tableRecentCalls.reloadData()
-                }
+        
+        User.user.getHistory { (history) -> () in
+            self.recentCalls = NSMutableArray()
+            for hist in history
+            {
+                self.recentCalls!.addObject(CallHistory(callHistory: hist as! PFObject))
             }
-            
-            let madeCallQuery : PFQuery = PFQuery(className: "CallHistory")
-            madeCallQuery.includeKey("MadeCall")
-            madeCallQuery.includeKey("ReceivedCall")
-            
-            madeCallQuery.whereKey("MadeCall", equalTo: user)
-            madeCallQuery.orderByDescending("createdAt")
-            madeCallQuery.limit = 15
-            
-            madeCallQuery.findObjectsInBackgroundWithBlock({ (result, error) -> Void in
-                finalize(result)
-            })
-            
-            
-            let receivedCallQuery : PFQuery = PFQuery(className: "CallHistory")
-            receivedCallQuery.includeKey("MadeCall")
-            receivedCallQuery.includeKey("ReceivedCall")
-            
-            receivedCallQuery.whereKey("ReceivedCall", equalTo: user)
-            receivedCallQuery.orderByDescending("createdAt")
-            receivedCallQuery.limit = 15
-            
-            receivedCallQuery.findObjectsInBackgroundWithBlock({ (result, error) -> Void in
-                finalize(result)
-            })
+            self.tableRecentCalls.reloadData()
         }
+        
+        
     }
     
 }

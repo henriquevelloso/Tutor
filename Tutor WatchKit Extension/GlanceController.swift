@@ -12,10 +12,21 @@ import Foundation
 
 class GlanceController: WKInterfaceController {
 
+    @IBOutlet weak var lblLang: WKInterfaceLabel!
+    
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         
-        // Configure interface objects here.
+        self.lblLang.setText("?")
+        WKInterfaceController.openParentApplication(["get" : "language"], reply: { (result, error) -> Void in
+            if let result = result
+            {
+                if let lang = result["language"] as? String
+                {
+                    self.lblLang.setText(lang)
+                }
+            }
+        })
     }
 
     override func willActivate() {
