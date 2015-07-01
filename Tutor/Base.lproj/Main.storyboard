@@ -408,7 +408,7 @@
                                     <action selector="saveParseLanguageLearn:" destination="kA7-BJ-a6R" eventType="touchUpInside" id="NGh-qk-fu8"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Qual idioma você quer praticar?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8r9-bs-qMC">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Qual idioma você quer praticar?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8r9-bs-qMC">
                                 <rect key="frame" x="176" y="44" width="246" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -433,7 +433,7 @@
                                                 <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M2z-b8-PYz">
                                                     <rect key="frame" x="2" y="4" width="524" height="58"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="back-short-language" translatesAutoresizingMaskIntoConstraints="NO" id="Bdc-RS-iUc">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back-short-language" translatesAutoresizingMaskIntoConstraints="NO" id="Bdc-RS-iUc">
                                                             <rect key="frame" x="8" y="6" width="44" height="44"/>
                                                             <animations/>
                                                             <constraints>
@@ -449,7 +449,7 @@
                                                                 </mask>
                                                             </variation>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="PT" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q5M-n6-XNQ" userLabel="PT">
+                                                        <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PT" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q5M-n6-XNQ" userLabel="PT">
                                                             <rect key="frame" x="19" y="18" width="21" height="21"/>
                                                             <animations/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -470,7 +470,7 @@
                                                     <animations/>
                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.40258129222972971" colorSpace="calibratedRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="centerY" secondItem="Bdc-RS-iUc" secondAttribute="centerY" id="09a-jl-mpO"/>
+                                                        <constraint firstAttribute="centerY" secondItem="Bdc-RS-iUc" secondAttribute="centerY" constant="1" id="09a-jl-mpO"/>
                                                         <constraint firstItem="Bdc-RS-iUc" firstAttribute="centerY" secondItem="q5M-n6-XNQ" secondAttribute="centerY" id="2lc-qd-iRS"/>
                                                         <constraint firstItem="Bdc-RS-iUc" firstAttribute="leading" secondItem="M2z-b8-PYz" secondAttribute="leading" constant="8" id="7Qu-Hk-mOc"/>
                                                         <constraint firstItem="Bdc-RS-iUc" firstAttribute="centerX" secondItem="q5M-n6-XNQ" secondAttribute="centerX" id="RQj-fH-c6E"/>
@@ -524,7 +524,7 @@
                             <constraint firstItem="8r9-bs-qMC" firstAttribute="top" secondItem="vJC-7q-G2w" secondAttribute="bottom" constant="24" id="eyS-8l-W59"/>
                             <constraint firstItem="ZQe-az-eEH" firstAttribute="leading" secondItem="HCq-Ed-lHL" secondAttribute="leading" id="imY-nY-56w"/>
                             <constraint firstAttribute="trailing" secondItem="ZQe-az-eEH" secondAttribute="trailing" id="qFs-yv-8fz"/>
-                            <constraint firstAttribute="centerX" secondItem="8r9-bs-qMC" secondAttribute="centerX" id="zpV-QH-BbP"/>
+                            <constraint firstAttribute="centerX" secondItem="8r9-bs-qMC" secondAttribute="centerX" constant="1" id="zpV-QH-BbP"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">

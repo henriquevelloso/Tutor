@@ -122,15 +122,14 @@ class EditProfileViewController: UIViewController, UITableViewDelegate, UITableV
         {
             if(self.practiceLangugeSet.count > 0){
                 labelAcronym.hidden = false
-                imageName.hidden = true
-                //print(cont)
+                imageName.image = UIImage(named: "back-short-language")
                 let pf = self.practiceLangugeSet[advance(self.practiceLangugeSet.startIndex, cont)]
                 //println(pf)
                 labelName.text = pf["Name"] as? String
                 labelAcronym.text = pf["Acronym"] as? String
                 //print(labelAcronym.text)
                 cont++
-                if(cont > self.practiceLangugeSet.count)
+                if(cont > self.practiceLangugeSet.count - 1)
                 {
                     self.cont = 0
                 }
@@ -139,4 +138,10 @@ class EditProfileViewController: UIViewController, UITableViewDelegate, UITableV
 
         return cell
     }
+    
+    @IBAction func logOut(sender: UIButton) {
+        PFUser.logOut()
+        self.presentViewController(UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as! UIViewController, animated: true, completion: nil)
+    }
+    
 }
