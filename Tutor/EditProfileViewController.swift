@@ -38,6 +38,8 @@ class EditProfileViewController: UIViewController, UITableViewDelegate, UITableV
 
         // Do any additional setup after loading the view
         
+        self.tableViewPracticedLanguages.tableHeaderView?.frame = CGRectMake(10, 0, self.tableViewPracticedLanguages.frame.size.width, 57)
+        
         radius(self.imageProfile)
         
         self.imageProfile.layer.borderColor = UIColor.whiteColor().CGColor
@@ -98,50 +100,112 @@ class EditProfileViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        return 2
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.practiceLangugeSet.count + 4
+        
+        if (section == 0) {
+            
+            return 4
+            
+        }
+            
+        else{
+            
+            return self.practiceLangugeSet.count
+            
+        }
+        
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
+        
         self.dataUser = [self.user.name!, self.user.gender!, self.user.email!, self.native2]
-
+        
+        
+        
         var cell = tableView.dequeueReusableCellWithIdentifier("simpleDetail", forIndexPath: indexPath) as! UITableViewCell
-
+        
+        
+        
         let imageName = cell.viewWithTag(3) as! UIImageView
+        
         let labelName = cell.viewWithTag(2) as! UILabel
+        
         let labelAcronym = cell.viewWithTag(1) as! UILabel
         
-        if(indexPath.row >= 0 && indexPath.row <= 3)
+        
+        
+        if(indexPath.section == 0)
+            
         {
+            
             labelAcronym.hidden = true
+            
             imageName.hidden = false
+            
             labelName.text = self.dataUser[indexPath.row] as? String
+            
             var i = self.dataUserImage[indexPath.row] as? String
+            
             imageName.image = UIImage(named: i!)
             
+            
+            
         }
+            
         else
+            
         {
-            if(self.practiceLangugeSet.count > 0){
-                labelAcronym.hidden = false
-                imageName.image = UIImage(named: "back-short-language")
-                let pf = self.practiceLangugeSet[advance(self.practiceLangugeSet.startIndex, cont)]
-                //println(pf)
-                labelName.text = pf["Name"] as? String
-                labelAcronym.text = pf["Acronym"] as? String
-                //print(labelAcronym.text)
-                cont++
-                if(cont > self.practiceLangugeSet.count - 1)
-                {
-                    self.cont = 0
-                }
-            }
+            
+            labelAcronym.hidden = false
+            
+            imageName.image = UIImage(named: "back-short-language")
+            
+            let pf = self.practiceLangugeSet[advance(self.practiceLangugeSet.startIndex, indexPath.row)]
+            
+            labelName.text = pf["Name"] as? String
+            
+            labelAcronym.text = pf["Acronym"] as? String
+            
         }
-
+        
+        
+        
         return cell
+        
+    }
+    
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        var view:UIView = UIView()
+        
+        if(section == 1){
+            
+            var string = "Practiced Languages"
+            
+            view = UIView(frame: CGRectMake(0, 0, tableView.frame.size.width, 57))
+            
+            let labelName = UILabel(frame: CGRectMake(0, 0, tableView.frame.size.width, 30))
+            
+            labelName.text = string
+            
+            labelName.textColor = UIColor.whiteColor()
+            labelName.textAlignment = .Center
+            
+            view.addSubview(labelName)
+            
+            view.backgroundColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
+  
+        }else{
+            tableView.tableHeaderView?.frame = CGRectMake(0, 0, tableView.frame.size.width, 0)
+        }
+        
+        
+        
+        return view
+        
     }
     
     @IBAction func logOut(sender: UIButton) {

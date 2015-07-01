@@ -256,19 +256,19 @@
                                     <action selector="BackDashBoard:" destination="3N9-7f-QaZ" eventType="touchUpInside" id="xfK-zn-gTF"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="57" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="BBe-9C-Lkj">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="62" sectionHeaderHeight="28" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="BBe-9C-Lkj">
                                 <rect key="frame" x="10" y="151" width="580" height="406"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell tag="20" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="simpleDetail" rowHeight="57" id="LYC-Lf-DlS">
+                                    <tableViewCell tag="20" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="simpleDetail" rowHeight="62" id="LYC-Lf-DlS">
                                         <rect key="frame" x="0.0" y="0.0" width="580" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LYC-Lf-DlS" id="3TA-Bd-pza">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back-short-language" translatesAutoresizingMaskIntoConstraints="NO" id="Bo6-3x-4II">
-                                                    <rect key="frame" x="8" y="5" width="48" height="48"/>
+                                                    <rect key="frame" x="8" y="7" width="48" height="48"/>
                                                     <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="48" id="VtV-h7-Msh"/>
@@ -276,7 +276,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oxB-Sr-Rgl">
-                                                    <rect key="frame" x="70" y="19" width="40" height="19.5"/>
+                                                    <rect key="frame" x="70" y="21.5" width="40" height="19.5"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.51299878379382058" green="0.51299878379382058" blue="0.51299878379382058" alpha="1" colorSpace="calibratedRGB"/>
