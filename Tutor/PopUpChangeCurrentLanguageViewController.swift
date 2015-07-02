@@ -127,6 +127,13 @@ class PopUpChangeCurrentLanguageViewController: UIViewController, UITableViewDel
             let cell = self.tableViewLanguages.cellForRowAtIndexPath(indexPath)
             
             User.user.currentLang = languages[indexPath.row] as? PFObject
+            if let user = User.user.parseUser
+            {
+                if let currentUser = User.user.currentLang{
+                    user.setObject(currentUser, forKey: "PracticeLanguage")
+                    user.saveInBackground()
+                }
+            }
             self.close()
         }
     }

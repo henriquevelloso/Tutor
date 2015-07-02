@@ -13,7 +13,6 @@ class EditProfileViewController: UIViewController, UITableViewDelegate, UITableV
     var languages : NSArray?
     
     @IBOutlet weak var tableViewPracticedLanguages: UITableView!
-    
     @IBOutlet weak var imageProfile: UIImageView!
     
     var practiceLangugeSet = Set<PFObject>()
@@ -23,7 +22,6 @@ class EditProfileViewController: UIViewController, UITableViewDelegate, UITableV
     var dataUser = NSMutableArray()
     var dataUserImage = NSMutableArray()
     
-    @IBOutlet weak var logOut: UIButton!
     
     var native2: String = ""
     var cont: NSInteger = 0
@@ -44,10 +42,6 @@ class EditProfileViewController: UIViewController, UITableViewDelegate, UITableV
         
         self.imageProfile.layer.borderColor = UIColor.whiteColor().CGColor
         self.imageProfile.layer.borderWidth = 3
-        
-        self.logOut.layer.masksToBounds = true
-        self.logOut.layer.cornerRadius = self.logOut.frame.size.height / 2
-        self.logOut.backgroundColor = UIColor(red: 193/255, green: 114/255, blue: 114/255, alpha: 1)
         
         self.dataUser = NSMutableArray()
         self.dataUser = NSMutableArray()
@@ -96,7 +90,7 @@ class EditProfileViewController: UIViewController, UITableViewDelegate, UITableV
     }
 
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 2
+        return 3
     }
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         var height : CGFloat = 20
@@ -120,6 +114,8 @@ class EditProfileViewController: UIViewController, UITableViewDelegate, UITableV
             return 4
         case 1:
             return self.practiceLangugeSet.count
+        case 2:
+            return 1
         default:
             return 0
         }
@@ -130,30 +126,29 @@ class EditProfileViewController: UIViewController, UITableViewDelegate, UITableV
         
         self.dataUser = [self.user.name!, self.user.gender!, self.user.email!, self.native2]
         
+        var cell : UITableViewCell!
+        var imageName : UIImageView!
+        var labelAcronym : UILabel!
+        var labelName : UILabel!
         
-        
-        var cell = tableView.dequeueReusableCellWithIdentifier("simpleDetail", forIndexPath: indexPath) as! UITableViewCell
-        
-        
-        
-        let imageName = cell.viewWithTag(3) as! UIImageView
-        let labelName = cell.viewWithTag(2) as! UILabel
-        let labelAcronym = cell.viewWithTag(1) as! UILabel
-        
-        
-        if(indexPath.section == 0)
+        if (indexPath.section == 0 || indexPath.section == 1){
+            
+            cell = tableView.dequeueReusableCellWithIdentifier("simpleDetail", forIndexPath: indexPath) as! UITableViewCell
+            
+            imageName = cell.viewWithTag(3) as! UIImageView
+            labelName = cell.viewWithTag(2) as! UILabel
+            labelAcronym = cell.viewWithTag(1) as! UILabel
+        }
+        switch(indexPath.section)
         {
+        case 0:
             labelAcronym.hidden = true
             
             imageName.hidden = false
             labelName.text = self.dataUser[indexPath.row] as? String
             var i = self.dataUserImage[indexPath.row] as? String
             imageName.image = UIImage(named: i!)
-            
-        }
-        else
-        {
-            
+        case 1:
             labelAcronym.hidden = false
             
             imageName.image = UIImage(named: "back-short-language")
@@ -162,6 +157,9 @@ class EditProfileViewController: UIViewController, UITableViewDelegate, UITableV
             
             labelName.text = pf["Name"] as? String
             labelAcronym.text = pf["Acronym"] as? String
+        default:
+            cell = tableView.dequeueReusableCellWithIdentifier("cellLogout", forIndexPath: indexPath) as! UITableViewCell
+            
         }
         
         return cell
@@ -186,25 +184,28 @@ class EditProfileViewController: UIViewController, UITableViewDelegate, UITableV
             
             view.backgroundColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
             
-        }else{
+        }else if (section == 0){
             tableView.tableHeaderView?.frame = CGRectMake(0, 0, tableView.frame.size.width, 0)
         }
         
         return view
-        
     }
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        if (indexPath.section == 0)
+        if (indexPath.section == 0 || indexPath.section == 2)
         {
             return 42
         }else{
             return 62
         }
     }
-    
-    @IBAction func logOut(sender: UIButton) {
-        PFUser.logOut()
-        self.presentViewController(UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as! UIViewController, animated: true, completion: nil)
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.tableViewPracticedLanguages.deselectRowAtIndexPath(indexPath, animated: true)
+        if(indexPath.section == 2)
+        {
+            PFUser.logOut()
+            self.presentViewController(UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as! UIViewController, animated: true, completion: nil)
+        }
     }
+
     
 }

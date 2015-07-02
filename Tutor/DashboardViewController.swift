@@ -13,7 +13,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     @IBOutlet weak var imgUserProfile: UIImageView!
     
     @IBOutlet weak var lblName: UILabel!
-    @IBOutlet weak var lblLevel: UILabel!
+    //@IBOutlet weak var lblLevel: UILabel!
     
     @IBOutlet weak var btCall: UIButton!
     @IBOutlet weak var btConfig: UIButton!
@@ -138,7 +138,18 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
                 
                 if let duration = history.callDuration
                 {
-                    lblDuration.text = "Duração da Ligação: \(duration)"
+                    let hour : Int = (Int)(duration / 3600)
+                    let min : Int = (Int)((duration % 3600) / 60)
+                    let sec : Int = (Int)((duration % 3600) % 60)
+                    
+                    var showHour = ""
+                    if (hour > 0){
+                        lblDuration.text = "Duração da Ligação: \(hour):\(min):\(sec)"
+                    }else if (min > 0){
+                        lblDuration.text = "Duração da Ligação: \(min) minutos e \(sec) segundos."
+                    }else{
+                        lblDuration.text = "Duração da Ligação: \(sec) segundos"
+                    }
                 }
                 let fillUserData : (User) -> () = {
                     user in
@@ -166,8 +177,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
                         }else{
                             fillUserData(receivedUser)
                         }
-                    }
-                    if let idMade = madeUser.parseUser?.objectId
+                    }else if let idMade = madeUser.parseUser?.objectId
                     {
                         if idCurrentUser == idMade
                         {
