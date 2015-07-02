@@ -137,11 +137,8 @@ class EditProfileViewController: UIViewController, UITableViewDelegate, UITableV
         
         
         let imageName = cell.viewWithTag(3) as! UIImageView
-        
         let labelName = cell.viewWithTag(2) as! UILabel
-        
         let labelAcronym = cell.viewWithTag(1) as! UILabel
-        
         
         
         if(indexPath.section == 0)
@@ -154,9 +151,7 @@ class EditProfileViewController: UIViewController, UITableViewDelegate, UITableV
             imageName.image = UIImage(named: i!)
             
         }
-            
         else
-            
         {
             
             labelAcronym.hidden = false

@@ -358,15 +358,15 @@
 				TargetAttributes = {
 					C39B6C1F1B42C7670049287A = {
 						CreatedOnToolsVersion = 6.3.2;
-						DevelopmentTeam = K2WF68895R;
+						DevelopmentTeam = 67BQ8QZEWD;
 					};
 					C39B6C2E1B42C7670049287A = {
 						CreatedOnToolsVersion = 6.3.2;
-						DevelopmentTeam = K2WF68895R;
+						DevelopmentTeam = 67BQ8QZEWD;
 					};
 					C5D37FD21B39A67D00487807 = {
 						CreatedOnToolsVersion = 6.3.2;
-						DevelopmentTeam = K2WF68895R;
+						DevelopmentTeam = 67BQ8QZEWD;
 					};
 				};
 			};

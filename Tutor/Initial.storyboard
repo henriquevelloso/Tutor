@@ -301,30 +301,6 @@
                                         <animations/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="simpleUserDetail" rowHeight="47" id="LGH-l4-Mwf">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LGH-l4-Mwf" id="9Ld-0U-N7V">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-profile" translatesAutoresizingMaskIntoConstraints="NO" id="gCB-db-L9D">
-                                                    <rect key="frame" x="8" y="4" width="39" height="39"/>
-                                                    <animations/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="39" id="fUr-iq-cqj"/>
-                                                        <constraint firstAttribute="width" secondItem="gCB-db-L9D" secondAttribute="height" multiplier="1:1" id="s2Z-Mh-UxZ"/>
-                                                    </constraints>
-                                                </imageView>
-                                            </subviews>
-                                            <animations/>
-                                            <constraints>
-                                                <constraint firstAttribute="centerY" secondItem="gCB-db-L9D" secondAttribute="centerY" id="DtQ-u0-bde"/>
-                                                <constraint firstItem="gCB-db-L9D" firstAttribute="leading" secondItem="9Ld-0U-N7V" secondAttribute="leading" constant="8" id="dBu-xe-G4L"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <animations/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                    </tableViewCell>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="3N9-7f-QaZ" id="JIs-5G-QDW"/>
@@ -528,7 +504,6 @@
         <image name="icon-back" width="25" height="40"/>
         <image name="icon-config" width="48" height="36"/>
         <image name="icon-phone-call" width="25" height="25"/>
-        <image name="icon-profile" width="43" height="43"/>
         <image name="icon-user" width="1025" height="1025"/>
     </resources>
 </document>

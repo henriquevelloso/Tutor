@@ -62,7 +62,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="29" maxY="0.0"/>
-                                <state key="normal" title="Logar com Facebook" image="icon-facebook">
+                                <state key="normal" title="Login com Facebook" image="icon-facebook">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
