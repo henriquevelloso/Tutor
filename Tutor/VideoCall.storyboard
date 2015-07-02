@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Video Call View Controller-->
+        <scene sceneID="AR4-Jc-aDS">
+            <objects>
+                <viewController id="ZZF-jd-cDH" customClass="VideoCallViewController" customModule="Tutor" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QsR-K9-Jst"/>
+                        <viewControllerLayoutGuide type="bottom" id="bQf-vS-x9i"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uTw-ll-Iph">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="800"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7bD-ee-nlY" userLabel="Video Call View" customClass="QBGLVideoView">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="800"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Wu-Ff-uSV" userLabel="Selfie Call View" customClass="QBGLVideoView">
+                                <rect key="frame" x="449" y="50" width="120" height="140"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="TBm-co-CCu"/>
+                                    <constraint firstAttribute="height" constant="140" id="aWq-lu-YCp"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CxY-Rd-Z5M">
+                                <rect key="frame" x="260" y="690" width="80" height="80"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="hhl-d0-c32"/>
+                                    <constraint firstAttribute="height" constant="80" id="vDc-Qb-Jde"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Call">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LUK-rJ-L5T">
+                                <rect key="frame" x="420" y="690" width="80" height="80"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Mic">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4eP-fq-gCg">
+                                <rect key="frame" x="100" y="690" width="80" height="80"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Cam">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="LUK-rJ-L5T" firstAttribute="height" secondItem="CxY-Rd-Z5M" secondAttribute="height" id="07w-00-mbW"/>
+                            <constraint firstItem="4eP-fq-gCg" firstAttribute="height" secondItem="LUK-rJ-L5T" secondAttribute="height" id="1P8-rD-T2A"/>
+                            <constraint firstItem="CxY-Rd-Z5M" firstAttribute="leading" secondItem="4eP-fq-gCg" secondAttribute="trailing" constant="80" id="4sf-dr-L5r"/>
+                            <constraint firstAttribute="centerX" secondItem="CxY-Rd-Z5M" secondAttribute="centerX" id="8b0-EN-Caa"/>
+                            <constraint firstItem="LUK-rJ-L5T" firstAttribute="centerY" secondItem="CxY-Rd-Z5M" secondAttribute="centerY" id="GGk-ls-7EM"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="3Wu-Ff-uSV" secondAttribute="trailing" constant="15" id="bHY-Dj-Mq4"/>
+                            <constraint firstItem="4eP-fq-gCg" firstAttribute="width" secondItem="CxY-Rd-Z5M" secondAttribute="width" id="cwc-9G-CE0"/>
+                            <constraint firstItem="4eP-fq-gCg" firstAttribute="width" secondItem="LUK-rJ-L5T" secondAttribute="width" id="dc3-4X-Ywn"/>
+                            <constraint firstItem="3Wu-Ff-uSV" firstAttribute="top" secondItem="QsR-K9-Jst" secondAttribute="bottom" constant="30" id="f9k-X5-5nq"/>
+                            <constraint firstItem="7bD-ee-nlY" firstAttribute="top" secondItem="uTw-ll-Iph" secondAttribute="top" id="fAc-ge-OZU"/>
+                            <constraint firstItem="4eP-fq-gCg" firstAttribute="centerY" secondItem="CxY-Rd-Z5M" secondAttribute="centerY" id="iEI-eI-ZlF"/>
+                            <constraint firstItem="LUK-rJ-L5T" firstAttribute="leading" secondItem="CxY-Rd-Z5M" secondAttribute="trailing" constant="80" id="iu4-Lq-PW1"/>
+                            <constraint firstItem="bQf-vS-x9i" firstAttribute="top" secondItem="7bD-ee-nlY" secondAttribute="bottom" id="ksx-of-QeQ"/>
+                            <constraint firstItem="4eP-fq-gCg" firstAttribute="height" secondItem="CxY-Rd-Z5M" secondAttribute="height" id="l9f-4u-TAv"/>
+                            <constraint firstItem="bQf-vS-x9i" firstAttribute="top" secondItem="CxY-Rd-Z5M" secondAttribute="bottom" constant="30" id="mSb-L6-az0"/>
+                            <constraint firstAttribute="trailing" secondItem="7bD-ee-nlY" secondAttribute="trailing" id="thv-Hj-6EY"/>
+                            <constraint firstItem="7bD-ee-nlY" firstAttribute="leading" secondItem="uTw-ll-Iph" secondAttribute="leading" id="twu-Qq-u8m"/>
+                            <constraint firstItem="LUK-rJ-L5T" firstAttribute="width" secondItem="CxY-Rd-Z5M" secondAttribute="width" id="wgf-TJ-Koz"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="1P8-rD-T2A"/>
+                                <exclude reference="dc3-4X-Ywn"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="800"/>
+                    <connections>
+                        <outlet property="btnChangeCam" destination="4eP-fq-gCg" id="KbC-kW-Nsc"/>
+                        <outlet property="btnEndCall" destination="CxY-Rd-Z5M" id="nv6-Gs-bbl"/>
+                        <outlet property="btnMicrofone" destination="LUK-rJ-L5T" id="ce1-9o-JEh"/>
+                        <outlet property="videoCallFull" destination="7bD-ee-nlY" id="mEx-3m-bPv"/>
+                        <outlet property="videoCallSelfie" destination="3Wu-Ff-uSV" id="cOK-do-HFL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iqT-92-rAT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="250" y="243"/>
+        </scene>
+    </scenes>
+</document>
