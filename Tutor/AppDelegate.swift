@@ -18,9 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         
-        QuickBloxManager.sharedInstance.configQuickBlox()
-        
-        
         // [Optional] Power your app with Local Datastore. For more info, go to
         // https://parse.com/docs/ios_guide#localdatastore/iOS
         Parse.enableLocalDatastore()
@@ -38,9 +35,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let currentUser = PFUser.currentUser()
         {
             User.user.loadData(currentUser)
-            
-            self.window?.rootViewController = UIStoryboard(name: "Initial", bundle: nil).instantiateInitialViewController() as? UIViewController
-            self.window?.makeKeyAndVisible()
+            if (currentUser.objectForKey("NativeLanguage") != nil && currentUser.objectForKey("PracticeLanguage") != nil)
+            {
+                self.window?.rootViewController = UIStoryboard(name: "Initial", bundle: nil).instantiateInitialViewController() as? UIViewController
+                self.window?.makeKeyAndVisible()
+            }else{
+                self.window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("vcWelcome") as? UIViewController
+                self.window?.makeKeyAndVisible()
+            }
         }
         
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)

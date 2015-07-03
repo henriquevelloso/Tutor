@@ -73,11 +73,11 @@
                                             <group width="22" height="22" alignment="left" verticalAlignment="center" backgroundImage="icon-user" contentMode="scaleAspectFit" radius="11" id="1Ei-g5-Wp1"/>
                                             <group width="99" height="50" alignment="left" layout="vertical" id="pG2-IZ-rX7">
                                                 <items>
-                                                    <label alignment="left" verticalAlignment="center" text="Nome" id="bR2-i8-r8G">
+                                                    <label alignment="left" verticalAlignment="center" text="Nome" minimumScaleFactor="0.80000000000000004" id="bR2-i8-r8G">
                                                         <color key="textColor" red="0.72496448863636365" green="0.72496448863636365" blue="0.72496448863636365" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="font" type="system" pointSize="16"/>
                                                     </label>
-                                                    <label alignment="left" verticalAlignment="center" text="Mins" id="Mq5-WD-kcA">
+                                                    <label width="29.5" alignment="left" verticalAlignment="center" text="Mins" minimumScaleFactor="0.80000000000000004" id="Mq5-WD-kcA">
                                                         <fontDescription key="font" type="system" pointSize="13"/>
                                                     </label>
                                                 </items>

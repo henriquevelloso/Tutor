@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="aOK-1j-R56">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="15A178w" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="aOK-1j-R56">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -35,14 +35,20 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ds-wf-Rh7">
-                                <rect key="frame" x="546" y="52" width="32" height="24"/>
+                                <rect key="frame" x="546" y="52" width="32" height="32"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="0Ds-wf-Rh7" secondAttribute="height" multiplier="4:3" id="7WD-GZ-Gh4"/>
-                                    <constraint firstAttribute="width" constant="32" id="sap-hQ-HN3"/>
+                                    <constraint firstAttribute="width" constant="32" id="FHf-G7-6px"/>
+                                    <constraint firstAttribute="width" secondItem="0Ds-wf-Rh7" secondAttribute="height" multiplier="1:1" id="LzK-uZ-Hae"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                 <state key="normal" image="icon-config"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="7WD-GZ-Gh4"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <action selector="editProfile:" destination="aOK-1j-R56" eventType="touchUpInside" id="28i-Dh-o9E"/>
                                     <segue destination="3N9-7f-QaZ" kind="showDetail" id="ry7-bT-63I"/>
@@ -87,7 +93,7 @@
                                     <constraint firstAttribute="height" constant="46" id="2N7-Fa-Em2"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="32" maxY="0.0"/>
-                                <state key="normal" title="Make a Call" image="icon-phone-call">
+                                <state key="normal" title="Fazer ligação" image="icon-phone-call">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -97,7 +103,7 @@
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="recentCall" rowHeight="68" id="PRW-WO-Cnd">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="recentCall" rowHeight="68" id="PRW-WO-Cnd" customClass="DashboardHistoryTableViewCell" customModule="Tutor" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="576" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PRW-WO-Cnd" id="zst-SZ-ZBg">
@@ -113,7 +119,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User's Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jM7-dy-bG9">
-                                                    <rect key="frame" x="62" y="13" width="89" height="18"/>
+                                                    <rect key="frame" x="62" y="13" width="466" height="18"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" red="0.20392156862745098" green="0.20392156862745098" blue="0.20392156862745098" alpha="1" colorSpace="calibratedRGB"/>
@@ -134,9 +140,12 @@
                                                         <constraint firstAttribute="width" secondItem="9Ip-Mh-01z" secondAttribute="height" multiplier="1:1" id="UoS-lP-Dqt"/>
                                                         <constraint firstAttribute="height" constant="38" id="wAe-sO-tmf"/>
                                                     </constraints>
-                                                    <state key="normal" image="icon-phone-call">
+                                                    <state key="normal" image="icon-phone-call-simple">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="btCallTouchUpInsideAction:" destination="PRW-WO-Cnd" eventType="touchUpInside" id="B39-o6-kyg"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <animations/>
@@ -148,12 +157,19 @@
                                                 <constraint firstAttribute="centerY" secondItem="9Ip-Mh-01z" secondAttribute="centerY" id="R1a-nR-8JH"/>
                                                 <constraint firstAttribute="trailing" secondItem="9Ip-Mh-01z" secondAttribute="trailing" constant="2" id="df5-bY-H3h"/>
                                                 <constraint firstItem="jM7-dy-bG9" firstAttribute="top" secondItem="zst-SZ-ZBg" secondAttribute="topMargin" constant="5" id="gsl-Dy-g2M"/>
+                                                <constraint firstItem="9Ip-Mh-01z" firstAttribute="leading" secondItem="jM7-dy-bG9" secondAttribute="trailing" constant="8" id="qOU-lh-dQg"/>
                                                 <constraint firstAttribute="centerY" secondItem="qie-Iw-Kil" secondAttribute="centerY" id="rd9-N3-t6h"/>
                                                 <constraint firstItem="Tfl-vP-fgC" firstAttribute="leading" secondItem="qie-Iw-Kil" secondAttribute="trailing" constant="8" id="uYt-hc-TXx"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="btCall" destination="9Ip-Mh-01z" id="D9E-if-CUN"/>
+                                            <outlet property="imgProfile" destination="qie-Iw-Kil" id="kw1-IL-T5f"/>
+                                            <outlet property="lblDuration" destination="Tfl-vP-fgC" id="qW1-uC-ieR"/>
+                                            <outlet property="lblName" destination="jM7-dy-bG9" id="ca3-V8-G03"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -228,18 +244,22 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8HR-cl-Jad">
-                                <rect key="frame" x="22" y="52" width="20" height="25"/>
+                                <rect key="frame" x="22" y="52" width="28" height="28"/>
                                 <animations/>
                                 <constraints>
+                                    <constraint firstAttribute="width" secondItem="8HR-cl-Jad" secondAttribute="height" multiplier="1:1" id="8w0-4T-8Q1"/>
                                     <constraint firstAttribute="width" secondItem="8HR-cl-Jad" secondAttribute="height" multiplier="4:5" id="Nsz-Qr-aye"/>
                                     <constraint firstAttribute="width" secondItem="8HR-cl-Jad" secondAttribute="height" multiplier="4:3" id="gt4-Hj-tA1"/>
+                                    <constraint firstAttribute="width" constant="28" id="oWY-Tm-bzZ"/>
                                     <constraint firstAttribute="width" constant="20" id="ofc-Il-18f"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
-                                <state key="normal" image="icon-back"/>
+                                <state key="normal" image="icon-close"/>
                                 <variation key="default">
                                     <mask key="constraints">
+                                        <exclude reference="Nsz-Qr-aye"/>
                                         <exclude reference="gt4-Hj-tA1"/>
+                                        <exclude reference="ofc-Il-18f"/>
                                     </mask>
                                 </variation>
                                 <connections>
@@ -265,7 +285,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oxB-Sr-Rgl">
-                                                    <rect key="frame" x="70" y="22" width="40" height="20"/>
+                                                    <rect key="frame" x="70" y="21" width="40" height="19.5"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.58471200980392157" green="0.58471200980392157" blue="0.58471200980392157" alpha="1" colorSpace="calibratedRGB"/>
@@ -298,7 +318,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sair" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UrX-hq-gAL">
-                                                    <rect key="frame" x="285" y="17" width="30" height="21"/>
+                                                    <rect key="frame" x="285" y="17" width="30" height="20.5"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.5094894255050505" green="0.0044621874302692918" blue="0.029087056414998244" alpha="1" colorSpace="calibratedRGB"/>
@@ -499,9 +519,10 @@
     </scenes>
     <resources>
         <image name="back-short-language" width="53" height="53"/>
-        <image name="icon-back" width="25" height="40"/>
-        <image name="icon-config" width="48" height="36"/>
-        <image name="icon-phone-call" width="25" height="25"/>
+        <image name="icon-close" width="40" height="40"/>
+        <image name="icon-config" width="42" height="42"/>
+        <image name="icon-phone-call" width="51" height="50"/>
+        <image name="icon-phone-call-simple" width="51" height="50"/>
         <image name="icon-user" width="1025" height="1025"/>
     </resources>
 </document>

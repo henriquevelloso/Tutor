@@ -177,6 +177,20 @@ class User: NSObject {
             }
             if let duration = history.callDuration
             {
+                let hour : Int = (Int)(duration / 3600)
+                let min : Int = (Int)((duration % 3600) / 60)
+                let sec : Int = (Int)((duration % 3600) % 60)
+                
+                var strDuration : String!
+                
+                if (hour > 0){
+                    strDuration = "\(hour):\(min):\(sec)"
+                }else if (min > 0){
+                    strDuration = "\(min) minutos e \(sec) segundos."
+                }else{
+                    strDuration = "\(sec) segundos"
+                }
+                
                 historyArray.addObject("\(duration)")
             }
             

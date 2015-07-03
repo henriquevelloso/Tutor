@@ -12,6 +12,7 @@
 		A6A984F51B4220CD0051F16B /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A984F41B4220CD0051F16B /* EditProfileViewController.swift */; };
 		C335B53B1B417C5900AB95AD /* PopUpChangeCurrentLanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C335B53A1B417C5900AB95AD /* PopUpChangeCurrentLanguageViewController.swift */; };
 		C3587A131B3C5CE000AD0D0F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3587A121B3C5CE000AD0D0F /* User.swift */; };
+		C363CA5F1B469FD90070E1D0 /* DashboardHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C363CA5E1B469FD90070E1D0 /* DashboardHistoryTableViewCell.swift */; };
 		C37AE9E11B43F8AB00A22D94 /* CallHistoryInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37AE9E01B43F8AB00A22D94 /* CallHistoryInterfaceController.swift */; };
 		C38EB4391B3B13E7006242C4 /* AdmiralCAT.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C38EB4381B3B1394006242C4 /* AdmiralCAT.ttf */; };
 		C38EB43E1B3B226D006242C4 /* RegisterWelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38EB43D1B3B226D006242C4 /* RegisterWelcomeViewController.swift */; };
@@ -29,7 +30,6 @@
 		C3E1980F1B3D872B003D1F77 /* CallHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E1980E1B3D872B003D1F77 /* CallHistory.swift */; };
 		C3E2F8031B44038E000FE6A0 /* CallHistoryContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E2F8021B44038E000FE6A0 /* CallHistoryContentCell.swift */; };
 		C5A1682D1B45667E00D37BB0 /* VideoCall.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5A1682C1B45667E00D37BB0 /* VideoCall.storyboard */; };
-		C5A1682F1B45668900D37BB0 /* QuickBloxManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A1682E1B45668900D37BB0 /* QuickBloxManager.swift */; };
 		C5A168311B45669000D37BB0 /* VideoCallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A168301B45669000D37BB0 /* VideoCallViewController.swift */; };
 		C5D37FD91B39A67D00487807 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D37FD81B39A67D00487807 /* AppDelegate.swift */; };
 		C5D37FDB1B39A67D00487807 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D37FDA1B39A67D00487807 /* LoginViewController.swift */; };
@@ -78,6 +78,7 @@
 		A6A984F41B4220CD0051F16B /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		C335B53A1B417C5900AB95AD /* PopUpChangeCurrentLanguageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpChangeCurrentLanguageViewController.swift; sourceTree = "<group>"; };
 		C3587A121B3C5CE000AD0D0F /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		C363CA5E1B469FD90070E1D0 /* DashboardHistoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		C37AE9E01B43F8AB00A22D94 /* CallHistoryInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallHistoryInterfaceController.swift; sourceTree = "<group>"; };
 		C38EB4381B3B1394006242C4 /* AdmiralCAT.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AdmiralCAT.ttf; sourceTree = "<group>"; };
 		C38EB43D1B3B226D006242C4 /* RegisterWelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterWelcomeViewController.swift; sourceTree = "<group>"; };
@@ -98,7 +99,6 @@
 		C3E2F8021B44038E000FE6A0 /* CallHistoryContentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallHistoryContentCell.swift; sourceTree = "<group>"; };
 		C538BDFD1B3AE30B00028F0C /* Bridge-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridge-Header.h"; sourceTree = "<group>"; };
 		C5A1682C1B45667E00D37BB0 /* VideoCall.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = VideoCall.storyboard; sourceTree = "<group>"; };
-		C5A1682E1B45668900D37BB0 /* QuickBloxManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickBloxManager.swift; sourceTree = "<group>"; };
 		C5A168301B45669000D37BB0 /* VideoCallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCallViewController.swift; sourceTree = "<group>"; };
 		C5D37FD31B39A67D00487807 /* Tutor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tutor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5D37FD71B39A67D00487807 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -144,7 +144,6 @@
 		C38EB43A1B3B2210006242C4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				C5A1682E1B45668900D37BB0 /* QuickBloxManager.swift */,
 				C3E1980E1B3D872B003D1F77 /* CallHistory.swift */,
 				C3587A121B3C5CE000AD0D0F /* User.swift */,
 				EBF0B63A1B3D7A2E00C068B6 /* Singleton.swift */,
@@ -166,6 +165,7 @@
 		C38EB43C1B3B221B006242C4 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				C363CA5E1B469FD90070E1D0 /* DashboardHistoryTableViewCell.swift */,
 				C5A168301B45669000D37BB0 /* VideoCallViewController.swift */,
 				C3D67B001B3C6F120036EBF8 /* DashboardViewController.swift */,
 				C5D37FDA1B39A67D00487807 /* LoginViewController.swift */,
@@ -490,11 +490,11 @@
 				EBF0B6391B3D78C600C068B6 /* RegisterPracticeLanguageViewController.swift in Sources */,
 				C3587A131B3C5CE000AD0D0F /* User.swift in Sources */,
 				A680BA6B1B3C8C3100FF2EE6 /* RegisterNativeLanguageViewController.swift in Sources */,
+				C363CA5F1B469FD90070E1D0 /* DashboardHistoryTableViewCell.swift in Sources */,
 				C5D37FDB1B39A67D00487807 /* LoginViewController.swift in Sources */,
 				C3D67B011B3C6F120036EBF8 /* DashboardViewController.swift in Sources */,
 				C3E1980F1B3D872B003D1F77 /* CallHistory.swift in Sources */,
 				C38EB43E1B3B226D006242C4 /* RegisterWelcomeViewController.swift in Sources */,
-				C5A1682F1B45668900D37BB0 /* QuickBloxManager.swift in Sources */,
 				C5D37FD91B39A67D00487807 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

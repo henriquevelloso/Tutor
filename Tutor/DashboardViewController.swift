@@ -31,11 +31,13 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     deinit{
+        NSNotificationCenter.defaultCenter().removeObserver(self)
         User.user.removeObserver(self, forKeyPath: "currentLang")
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "callUserNotification:", name: "callUser", object: nil)
         
         User.user.addObserver(self, forKeyPath: "currentLang", options: NSKeyValueObservingOptions.New, context: nil)
         
@@ -107,20 +109,10 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     // Delegates + DataSources
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell : UITableViewCell = tableView.dequeueReusableCellWithIdentifier("recentCall") as! UITableViewCell
+        let cell : DashboardHistoryTableViewCell = tableView.dequeueReusableCellWithIdentifier("recentCall") as! DashboardHistoryTableViewCell
         
         if let recents = self.recentCalls
         {
-            
-            let imgProfile : UIImageView = cell.viewWithTag(1) as! UIImageView
-            let lblName : UILabel = cell.viewWithTag(2) as! UILabel
-            //let lblLanguage : UILabel = cell.viewWithTag(3) as! UILabel
-            let lblDuration : UILabel = cell.viewWithTag(4) as! UILabel
-            let btCall : UIButton = cell.viewWithTag(5) as! UIButton
-            
-            radius(imgProfile)
-            radius(btCall)
-            
             
             if let history : CallHistory = recents.objectAtIndex(indexPath.row) as? CallHistory
             {
@@ -144,26 +136,27 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
                     
                     var showHour = ""
                     if (hour > 0){
-                        lblDuration.text = "Duração da Ligação: \(hour):\(min):\(sec)"
+                        cell.lblDuration.text = "Duração da Ligação: \(hour):\(min):\(sec)"
                     }else if (min > 0){
-                        lblDuration.text = "Duração da Ligação: \(min) minutos e \(sec) segundos."
+                        cell.lblDuration.text = "Duração da Ligação: \(min) minutos e \(sec) segundos."
                     }else{
-                        lblDuration.text = "Duração da Ligação: \(sec) segundos"
+                        cell.lblDuration.text = "Duração da Ligação: \(sec) segundos"
                     }
                 }
                 let fillUserData : (User) -> () = {
                     user in
                     
+                    cell.user = user
                     user.getPhoto({ (photoData, error) -> () in
                         if let photoData = photoData
                         {
-                            imgProfile.image = UIImage(data: photoData)
+                            cell.imgProfile.image = UIImage(data: photoData)
                         }
                     })
                     
                     if let userName = user.name
                     {
-                        lblName.text = userName
+                        cell.lblName.text = userName
                     }
                 }
                 
@@ -223,6 +216,11 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         }
     }
     
+    @IBAction func callUserNotification(notification: NSNotification)
+    {
+        println(notification.object)
+        // Call User HERE
+    }
     
     @IBAction func unwindProfileSegue(segue : UIStoryboardSegue)
     {
@@ -239,7 +237,6 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
             }
             self.tableRecentCalls.reloadData()
         }
-        
         
     }
     

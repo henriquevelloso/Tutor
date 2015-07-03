@@ -168,23 +168,6 @@ class LoginViewController: UIViewController {
                     undoActivityIndicatorView();
                     if (user.objectForKey("NativeLanguage") != nil && user.objectForKey("PracticeLanguage") != nil)
                     {
-                        
-                        //TODO login QuickBlox
-                        
-                        QuickBloxManager.sharedInstance.loginUserWithID(user.objectId!, _password: user.objectId!) { (success) -> () in
-                            
-                            if success == true {
-                                
-                                println("logou no QuickBlox")
-                                
-                            } else {
-                                println("ERROR no login do QuickBlox")
-                            }
-                            
-                        }
-                        
-                        
-                        
                         self.presentViewController(UIStoryboard(name: "Initial", bundle: nil).instantiateInitialViewController() as! UIViewController, animated: true, completion: nil)
                     }else{
                         
