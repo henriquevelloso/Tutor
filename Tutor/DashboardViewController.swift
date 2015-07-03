@@ -218,8 +218,16 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     
     @IBAction func callUserNotification(notification: NSNotification)
     {
-        println(notification.object)
+        if let user = notification.object as? User
+        {
+            UIApplication.sharedApplication().openURL(NSURL(string: "facetime://" + user.email!)!)
+        }
+//        println(notification.object)
         // Call User HERE
+    }
+    @IBAction func randomCallTouchUpInsideAction(sender: UIButton) {
+        UIApplication.sharedApplication().openURL(NSURL(string: "facetime://henriquevelloso@gmail.com")!)
+        
     }
     
     @IBAction func unwindProfileSegue(segue : UIStoryboardSegue)

@@ -5,6 +5,13 @@
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Dashboard View Controller-->
         <scene sceneID="HyZ-Jg-deY">
@@ -97,6 +104,9 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="randomCallTouchUpInsideAction:" destination="aOK-1j-R56" eventType="touchUpInside" id="aqK-8c-YCq"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="vWC-ow-d7Z">
                                 <rect key="frame" x="12" y="173" width="576" height="356"/>
@@ -104,9 +114,10 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="recentCall" rowHeight="68" id="PRW-WO-Cnd" customClass="DashboardHistoryTableViewCell" customModule="Tutor" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="576" height="44"/>
+                                        <rect key="frame" x="0.0" y="22" width="576" height="68"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PRW-WO-Cnd" id="zst-SZ-ZBg">
+                                            <rect key="frame" x="0.0" y="0.0" width="576" height="67.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-user" translatesAutoresizingMaskIntoConstraints="NO" id="qie-Iw-Kil">
@@ -272,9 +283,10 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell tag="20" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="simpleDetail" rowHeight="62" id="LYC-Lf-DlS">
-                                        <rect key="frame" x="0.0" y="0.0" width="580" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="600" height="62"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LYC-Lf-DlS" id="3TA-Bd-pza">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="62"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" tag="3" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back-short-language" translatesAutoresizingMaskIntoConstraints="NO" id="Bo6-3x-4II">
@@ -312,9 +324,10 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellLogout" rowHeight="55" id="M9S-bA-RT5">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="90" width="600" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="M9S-bA-RT5" id="L1x-Ag-Ig4">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="55"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sair" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UrX-hq-gAL">
@@ -395,9 +408,10 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <prototypes>
                                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellLanguage" rowHeight="66" id="Eba-2r-rFc">
-                                                <rect key="frame" x="0.0" y="0.0" width="568" height="44"/>
+                                                <rect key="frame" x="0.0" y="22" width="568" height="66"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Eba-2r-rFc" id="14B-6b-6TD">
+                                                    <rect key="frame" x="0.0" y="0.0" width="568" height="66"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MEY-fu-Eec">
@@ -521,8 +535,8 @@
         <image name="back-short-language" width="53" height="53"/>
         <image name="icon-close" width="40" height="40"/>
         <image name="icon-config" width="42" height="42"/>
-        <image name="icon-phone-call" width="51" height="50"/>
-        <image name="icon-phone-call-simple" width="51" height="50"/>
+        <image name="icon-phone-call" width="25" height="25"/>
+        <image name="icon-phone-call-simple" width="25" height="25"/>
         <image name="icon-user" width="1025" height="1025"/>
     </resources>
 </document>
